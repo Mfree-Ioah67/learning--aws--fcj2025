@@ -7,15 +7,15 @@ chapter: false
 
 # Báo cáo thực tập
 ### Thông tin sinh viên:
-&emsp; **Họ và tên:** Nguyễn Văn A
+&emsp; **Họ và tên:** Phạm Hoàng Hải Nguyen
 
-&emsp; **Số điện thoại:** 0989888999
+&emsp; **Số điện thoại:** 0829533727
 
-&emsp; **Email:** Anguyenvan@gmail.com
+&emsp; **Email:** nguyenphhse180511@fpt.edu.vn
 
-&emsp; **Trường:** Đại học Sư phạm Kỹ thuật TP.HCM
+&emsp; **Trường:** Đại học FPT
 
-&emsp; **Ngành:** Công nghệ thông tin
+&emsp; **Ngành:** An toàn thông tin
 
 &emsp; **Lớp:** AWS082025
 
@@ -23,7 +23,7 @@ chapter: false
 
 &emsp; **Vị trí thực tập:** FCJ Cloud Intern
 
-&emsp; **Thời gian thực tập:** Từ ngày 12/08/2025 đến ngày 12/11/2025
+&emsp; **Thời gian thực tập:** Từ ngày 06/09/2025 đến ngày 15/12/2025
 
 ![Ảnh đại diện của bạn](/images/avatar.png)
 
