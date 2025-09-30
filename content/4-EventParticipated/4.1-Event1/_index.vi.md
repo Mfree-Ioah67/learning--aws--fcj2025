@@ -11,7 +11,7 @@ pre: " <b> 4.1. </b> "
 {{% /notice %}}
 
 # Bài thu hoạch “🎉 KHỞI ĐỘNG HÀNH TRÌNH ĐÁM MÂY ĐẦU TIÊN CỦA AWS LỰC LƯỢNG LÀM VIỆC OJT MÙA THU 2025 🎉”
-    
+
 ### Mục Đích Của Sự Kiện
 
 - Chia sẻ best practices trong thiết kế ứng dụng hiện đại
@@ -122,5 +122,5 @@ Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải 
 
 #### Một số hình ảnh khi tham gia sự kiện
 * Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+> Nhìn chung, sự kiện KICK-OFF là một trải nghiệm đầy cảm hứng, mang lại cho tôi nguồn động lực mạnh mẽ để tự tin bước vào con đường sự nghiệp trong ngành công nghệ. Những chia sẻ từ các chuyên gia và cựu sinh viên đã mở ra cho tôi một tầm nhìn mới, giúp tôi hiểu rõ hơn về cách xây dựng các hệ thống hiện đại cũng như làm việc hiệu quả trong môi trường chuyên nghiệp. Tôi mong muốn sẽ áp dụng những kiến thức và kinh nghiệm này vào việc học tập cũng như các dự án trong tương lai.
 
