@@ -1,6 +1,6 @@
-baseURL = "https://thienluhoan.github.io/workshop-template/"
-relativeURLs = true
-canonifyURLs = true
+baseURL = "https://mfree-ioah67.github.io/learning--aws--fcj2025/"
+relativeURLs = false
+canonifyURLs = false
 
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"
