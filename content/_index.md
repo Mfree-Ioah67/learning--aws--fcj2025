@@ -5,7 +5,6 @@ weight: 1
 chapter: false
 ---
 
-    
 # Internship Report
 
 {{% notice warning %}}
@@ -13,6 +12,7 @@ chapter: false
 {{% /notice %}}
 
 ### Student Information:
+
 &emsp; **Full Name:** Pham Hoang Hai Nguyen
 
 &emsp; **Phone Number:** 0829533727
@@ -31,7 +31,7 @@ chapter: false
 
 &emsp; **Internship Duration:** From 06/09/2025 to 15/12/2025
 
-![Profile Photo](/images/4x3.png)
+![Profile Photo](images/4x3.png)
 
 ### Report Content
 
@@ -42,4 +42,3 @@ chapter: false
 5.  [Workshop](5-Workshop/)
 6.  [Self-evaluation](6-Self-evaluation/)
 7.  [Sharing and Feedback](7-Feedback/)
-
