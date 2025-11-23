@@ -1,6 +1,6 @@
 ﻿---
-title: "Secure Internet-Based Access to SaaS PrivateLink Endpoints Using AWS Verified Access"
-date: 2024-08-21
+title: "Secure internet-based access to SaaS PrivateLink endpoints using AWS Verified Access"
+date: 2025-08-21
 weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "

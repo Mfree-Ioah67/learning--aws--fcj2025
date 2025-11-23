@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog 1 on Internship Report</title>
-    <link>http://localhost:1313/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/</link>
-    <description>Recent content in Blog 1 on Internship Report</description>
+    <title>Secure internet-based access to SaaS PrivateLink endpoints using AWS Verified Access on Internship Report</title>
+    <link>https://mfree-ioah67.github.io/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/</link>
+    <description>Recent content in Secure internet-based access to SaaS PrivateLink endpoints using AWS Verified Access on Internship Report</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:1313/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://mfree-ioah67.github.io/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://mfree-ioah67.github.io/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/secure-internet-based-access-to-saas-privatelink-endpoints-using-aws-verified-access--networking--content-delivery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mfree-ioah67.github.io/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/secure-internet-based-access-to-saas-privatelink-endpoints-using-aws-verified-access--networking--content-delivery/</guid>
+      <description>&lt;h1 id=&#34;truy-cập-an-toàn-qua-internet-tới-các-điểm-cuối-saas-privatelink-bằng-aws-verified-access--tác-giả-salman-ahmed-và-ankush-goyal--ngày-21-tháng-8-năm-2025--danh-mục-aws-privatelink-aws-verified-access-networking--content-delivery-saas-technical-how-to&#34;&gt;&lt;strong&gt;Truy cập an toàn qua Internet tới các điểm cuối SaaS PrivateLink bằng AWS Verified Access&lt;/strong&gt;  Tác giả: Salman Ahmed và Ankush Goyal | Ngày 21 tháng 8 năm 2025 | Danh mục: &lt;a href=&#34;https://aws.amazon.com/vi/blogs/networking-and-content-delivery/category/networking-content-delivery/aws-privatelink/&#34;&gt;AWS PrivateLink&lt;/a&gt;, &lt;a href=&#34;https://aws.amazon.com/vi/blogs/networking-and-content-delivery/category/networking-content-delivery/aws-verified-access/&#34;&gt;AWS Verified Access&lt;/a&gt;, &lt;a href=&#34;https://aws.amazon.com/vi/blogs/networking-and-content-delivery/category/networking-content-delivery/&#34;&gt;Networking &amp;amp; Content Delivery&lt;/a&gt;, &lt;a href=&#34;https://aws.amazon.com/vi/blogs/networking-and-content-delivery/category/saas/&#34;&gt;SaaS&lt;/a&gt;, &lt;a href=&#34;https://aws.amazon.com/vi/blogs/networking-and-content-delivery/category/post-types/technical-how-to/&#34;&gt;Technical How-to&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;h1 id=&#34;giới-thiệu&#34;&gt;&lt;strong&gt;Giới thiệu&lt;/strong&gt;&lt;/h1&gt;&#xA;&lt;p&gt;Khi việc áp dụng điện toán đám mây ngày càng phát triển, các nhà cung cấp phần mềm như một dịch vụ &lt;a href=&#34;https://aws.amazon.com/saas/&#34;&gt;software-as-a-service (SaaS)&lt;/a&gt; trên AWS ngày càng sử dụng Amazon Web Services &lt;a href=&#34;https://aws.amazon.com/privatelink/&#34;&gt;(AWS) PrivateLink&lt;/a&gt; để cung cấp dịch vụ cho khách hàng một cách an toàn.&lt;br&gt;&#xA;PrivateLink cho phép kết nối riêng tư, liền mạch giữa các VPC mà không cần đưa ứng dụng ra Internet công cộng, giúp đảm bảo bảo mật mạnh mẽ và hiệu suất mạng ổn định.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

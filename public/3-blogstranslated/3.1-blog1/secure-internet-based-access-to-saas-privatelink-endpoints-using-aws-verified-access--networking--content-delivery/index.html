@@ -12,7 +12,7 @@
 
     <link rel="icon" href="/learning--aws--fcj2025/images/favicon.png" type="image/png">
 
-    <title>Secure internet-based access to SaaS PrivateLink endpoints using AWS Verified Access :: Internship Report</title>
+    <title> :: Internship Report</title>
 
     
     <link href="/learning--aws--fcj2025/css/nucleus.css?1763920604" rel="stylesheet">
@@ -40,7 +40,7 @@
     
 
   </head>
-  <body class="" data-url="/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/">
+  <body class="" data-url="/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/secure-internet-based-access-to-saas-privatelink-endpoints-using-aws-verified-access--networking--content-delivery/">
     <nav
   id="sidebar"
   class="showVisitedLinks"
@@ -432,8 +432,8 @@
   data-nav-id="/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/"
   title="Secure internet-based access to SaaS PrivateLink endpoints using AWS Verified Access"
   class="dd-item 
+        parent
         
-        active
         
         "
 >
@@ -449,7 +449,7 @@
 <li
   data-nav-id="/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/secure-internet-based-access-to-saas-privatelink-endpoints-using-aws-verified-access--networking--content-delivery/"
   title=""
-  class="dd-item "
+  class="dd-item active"
 >
   <a href="/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/secure-internet-based-access-to-saas-privatelink-endpoints-using-aws-verified-access--networking--content-delivery/">
      <i
@@ -905,19 +905,12 @@
                        
                 <option
                   id="en"
-                  value="https://mfree-ioah67.github.io/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/"
+                  value="https://mfree-ioah67.github.io/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/secure-internet-based-access-to-saas-privatelink-endpoints-using-aws-verified-access--networking--content-delivery/"
                   selected
                 >
                   English
                 </option>
-                            
-                <option
-                  id="vi"
-                  value="https://mfree-ioah67.github.io/learning--aws--fcj2025/vi/3-blogstranslated/3.1-blog1/"
-                >
-                  Tiếng Việt
-                </option>
-                   
+                     
               </select>
               <svg
                 version="1.1"
@@ -1027,7 +1020,13 @@
             
           
           
-            <a href='/learning--aws--fcj2025/'>Internship Report</a> > <a href='/learning--aws--fcj2025/3-blogstranslated/'>Translated Blogs</a> > Secure internet-based access to SaaS PrivateLink endpoints using AWS Verified Access
+            
+            
+          
+          
+            <a href='/learning--aws--fcj2025/'>Internship Report</a> > <a href='/learning--aws--fcj2025/3-blogstranslated/'>Translated Blogs</a> > <a href='/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/'>Secure internet-based access to SaaS PrivateLink endpoints using AWS Verified Access</a> > 
+          
+        
           
         
           
@@ -1041,27 +1040,15 @@
                     <div class="progress">
   <div class="wrapper"><nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#solution-overview">Solution Overview</a>
+    <li>
       <ul>
-        <li><a href="#traffic-flow">Traffic Flow</a></li>
+        <li></li>
       </ul>
     </li>
-    <li><a href="#solution-deployment">Solution Deployment</a>
-      <ul>
-        <li><a href="#step-1-saas-provider-vpc--set-up-privatelink-service">Step 1: SaaS Provider VPC — Set Up PrivateLink Service</a></li>
-        <li><a href="#step-2-consumer-vpc--create-interface-vpc-endpoint">Step 2: Consumer VPC — Create Interface VPC Endpoint</a></li>
-        <li><a href="#step-3-consumer-account--create-aws-verified-access">Step 3: Consumer Account — Create AWS Verified Access</a></li>
-        <li><a href="#step-4-create-dns-for-your-application">Step 4: Create DNS for Your Application</a></li>
-      </ul>
-    </li>
-    <li><a href="#accessing-the-application-using-aws-verified-access">Accessing the Application Using AWS Verified Access</a></li>
-    <li><a href="#conclusion">Conclusion</a>
-      <ul>
-        <li><a href="#references">References</a></li>
-      </ul>
-    </li>
-    <li><a href="#about-the-authors">About the Authors</a></li>
+  </ul>
+
+  <ul>
+    <li></li>
   </ul>
 </nav></div>
 </div>
@@ -1079,145 +1066,168 @@
           
             <h1>
               
-              Secure internet-based access to SaaS PrivateLink endpoints using AWS Verified Access
+              
             </h1>
           
 
         
 
 
-
-	<p><strong>Authors:</strong> Salman Ahmed and Ankush Goyal | <strong>Date:</strong> August 21, 2025</p>
-<p><strong>Categories:</strong> <a href="https://aws.amazon.com/privatelink/">AWS PrivateLink</a>, <a href="https://aws.amazon.com/verified-access/">AWS Verified Access</a>, <a href="https://aws.amazon.com/products/networking/">Networking &amp; Content Delivery</a>, <a href="https://aws.amazon.com/saas/">SaaS</a>, <a href="https://aws.amazon.com/blogs/networking-and-content-delivery/category/post-types/technical-how-to/">Technical How-to</a></p>
-<hr>
-<h2 id="introduction">Introduction</h2>
-<p>As cloud adoption continues to grow, software-as-a-service (SaaS) providers on AWS increasingly use <strong>Amazon Web Services (AWS) PrivateLink</strong> to deliver services to customers securely.</p>
-<p>PrivateLink enables private, seamless connectivity between VPCs without exposing applications to the public internet, ensuring strong security and stable network performance.</p>
-<p>However, what if you want to provide that same level of secure access to users outside of AWS — such as remote employees or partners connecting via the internet? <strong>AWS Verified Access</strong> allows you to extend PrivateLink-powered services to authorized users over the internet while maintaining strict security barriers and a <strong>zero trust</strong> architecture.</p>
-<p>In this post, we&rsquo;ll explore how to enable secure, scalable, internet-based access to PrivateLink endpoints using Verified Access. This helps organizations extend SaaS integration capabilities to users anywhere — without compromising security.</p>
-<p><em>(This post assumes you are already familiar with the basic concepts of AWS Verified Access, so we won&rsquo;t delve into foundational knowledge.)</em></p>
-<hr>
-<h2 id="solution-overview">Solution Overview</h2>
-<p>We&rsquo;ll start with a scenario involving secure access to a SaaS application. In this case, the SaaS provider offers their application through a PrivateLink endpoint service, while users set up an interface VPC endpoint in their VPC to connect to this service. This is illustrated in the architecture diagram in the following section.</p>
-<p>The challenge arises when users in the organization need to access this service from outside AWS, for example, via the internet. We deploy Verified Access as a solution to establish this connection, since PrivateLink endpoints can only be accessed from within a VPC or through private network connections such as <strong>AWS Site-to-Site VPN</strong> or <strong>AWS Direct Connect</strong>. This solution does not require cross-Region PrivateLink connections, as it relies on same-Region connectivity within AWS.</p>
-<p><img src="/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/image14.png" alt="alt text">
-<em>Figure 1: Architecture diagram showing user requests using Verified Access endpoints to access SaaS services hosted in the SaaS account.</em></p>
-<h3 id="traffic-flow">Traffic Flow</h3>
-<p>Using Verified Access means the traffic flow occurs as follows:</p>
+<h1 id="truy-cập-an-toàn-qua-internet-tới-các-điểm-cuối-saas-privatelink-bằng-aws-verified-access--tác-giả-salman-ahmed-và-ankush-goyal--ngày-21-tháng-8-năm-2025--danh-mục-aws-privatelink-aws-verified-access-networking--content-delivery-saas-technical-how-to"><strong>Truy cập an toàn qua Internet tới các điểm cuối SaaS PrivateLink bằng AWS Verified Access</strong>  Tác giả: Salman Ahmed và Ankush Goyal | Ngày 21 tháng 8 năm 2025 | Danh mục: <a href="https://aws.amazon.com/vi/blogs/networking-and-content-delivery/category/networking-content-delivery/aws-privatelink/">AWS PrivateLink</a>, <a href="https://aws.amazon.com/vi/blogs/networking-and-content-delivery/category/networking-content-delivery/aws-verified-access/">AWS Verified Access</a>, <a href="https://aws.amazon.com/vi/blogs/networking-and-content-delivery/category/networking-content-delivery/">Networking &amp; Content Delivery</a>, <a href="https://aws.amazon.com/vi/blogs/networking-and-content-delivery/category/saas/">SaaS</a>, <a href="https://aws.amazon.com/vi/blogs/networking-and-content-delivery/category/post-types/technical-how-to/">Technical How-to</a></h1>
+<h1 id="giới-thiệu"><strong>Giới thiệu</strong></h1>
+<p>Khi việc áp dụng điện toán đám mây ngày càng phát triển, các nhà cung cấp phần mềm như một dịch vụ <a href="https://aws.amazon.com/saas/">software-as-a-service (SaaS)</a> trên AWS ngày càng sử dụng Amazon Web Services <a href="https://aws.amazon.com/privatelink/">(AWS) PrivateLink</a> để cung cấp dịch vụ cho khách hàng một cách an toàn.<br>
+PrivateLink cho phép kết nối riêng tư, liền mạch giữa các VPC mà không cần đưa ứng dụng ra Internet công cộng, giúp đảm bảo bảo mật mạnh mẽ và hiệu suất mạng ổn định.</p>
+<p>Tuy nhiên, nếu bạn muốn cung cấp cùng mức độ truy cập an toàn đó cho người dùng bên ngoài AWS — chẳng hạn như nhân viên làm việc từ xa hoặc đối tác kết nối qua Internet thì sao? <a href="https://aws.amazon.com/verified-access/">AWS Verified Access</a> cho phép mở rộng các dịch vụ được hỗ trợ bởi PrivateLink cho người dùng được ủy quyền qua Internet, đồng thời vẫn duy trì các rào cản bảo mật nghiêm ngặt và kiến trúc <a href="https://aws.amazon.com/security/zero-trust/">zero trust</a>.</p>
+<p>Trong bài viết này, chúng ta sẽ tìm hiểu cách kích hoạt truy cập an toàn, có thể mở rộng và dựa trên Internet tới các điểm cuối PrivateLink bằng cách sử dụng Verified Access. Điều này giúp các tổ chức mở rộng khả năng tích hợp SaaS đến người dùng ở bất kỳ đâu — mà không ảnh hưởng đến tính bảo mật.</p>
+<p><em>(Bài viết này giả định rằng bạn đã quen thuộc với các khái niệm cơ bản của AWS Verified Access, do đó phần này không đi sâu vào những kiến thức nền tảng.)</em></p>
+<h1 id="tổng-quan-giải-pháp"><strong>Tổng quan giải pháp</strong></h1>
+<p>Chúng ta sẽ bắt đầu với một tình huống liên quan đến truy cập an toàn vào ứng dụng SaaS.<br>
+Trong trường hợp này, nhà cung cấp SaaS cung cấp ứng dụng của họ thông qua một dịch vụ PrivateLink endpoint, trong khi người dùng thiết lập interface VPC endpoint trong VPC của họ để kết nối với dịch vụ này. Điều này được thể hiện trong sơ đồ kiến trúc ở phần sau.<br>
+Thách thức đặt ra là khi người dùng trong tổ chức cần truy cập dịch vụ này từ bên ngoài AWS, ví dụ như qua Internet. Chúng ta triển khai Verified Access như một giải pháp để thiết lập kết nối này, vì PrivateLink endpoint chỉ có thể truy cập từ trong VPC hoặc qua kết nối mạng riêng như  <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS Site-to-Site VPN</a>  hoặc <a href="https://aws.amazon.com/directconnect/">AWS Direct Connect</a>. Giải pháp này không đòi hỏi kết nối PrivateLink giữa các vùng (cross-Region), vì nó dựa vào kết nối trong cùng một vùng AWS (same-Region).</p>
+<p><img src="#ZgotmplZ" alt=""></p>
+<p><em>Hình 1: Sơ đồ kiến trúc mô tả yêu cầu của người dùng sử dụng các điểm cuối Verified Access để truy cập vào dịch vụ SaaS được lưu trữ trong tài khoản SaaS.</em></p>
+<p>Sử dụng Verified Access có nghĩa là luồng lưu lượng diễn ra như sau:</p>
 <ol>
 <li>
-<p>Remote users with the <strong>Verified Access Connectivity Client</strong> installed send requests to a public URL provided by the consumer VPC owner, which points to AWS Verified Access endpoints. The Verified Access Connectivity Client enables secure connectivity between user devices and applications that don&rsquo;t use HTTP(s).</p>
+<p>Người dùng từ xa có cài đặt Verified Access (<a href="https://aws.amazon.com/verified-access/connectivity-client-download/">Connectivity Client</a>) sẽ gửi yêu cầu đến URL công khai do chủ sở hữu của consumer VPC cung cấp, URL này trỏ đến các điểm cuối (endpoints) của AWS Verified Access. Verified Access Connectivity Client cho phép kết nối bảo mật giữa thiết bị người dùng và các ứng dụng không sử dụng HTTP(s).</p>
 </li>
 <li>
-<p>In the consumer account, there is an <strong>Amazon Route 53 public hosted zone</strong> containing weighted routing records that help load balance traffic between two AWS Verified Access endpoints.</p>
+<p>Trong tài khoản consumer, có một  <a href="https://aws.amazon.com/route53/">Amazon Route 53</a> public hosted zone chứa bản ghi định tuyến có trọng số (weighted routing record) giúp cân bằng tải lưu lượng giữa hai điểm cuối AWS Verified Access. Mỗi điểm cuối Verified Access được ánh xạ tới một interface VPC endpoint cụ thể.</p>
 </li>
 <li>
-<p>Each Verified Access endpoint is mapped to a specific interface VPC endpoint.</p>
+<p>Người dùng được xác thực bằng  <a href="https://aws.amazon.com/iam/identity-center/">AWS IAM Identity Center</a>.</p>
 </li>
 <li>
-<p>Users are authenticated using <strong>AWS IAM Identity Center</strong>.</p>
+<p>Yêu cầu từ interface VPC endpoint được chuyển tiếp thông qua PrivateLink đến  <a href="https://aws.amazon.com/elasticloadbalancing/network-load-balancer/">Network Load Balancer</a> (NLB) trong SaaS VPC.</p>
 </li>
 <li>
-<p>Requests from the interface VPC endpoint are forwarded through PrivateLink to a <strong>Network Load Balancer (NLB)</strong> in the SaaS VPC.</p>
-</li>
-<li>
-<p>The NLB routes traffic to <strong>Amazon Elastic Compute Cloud (Amazon EC2)</strong> instances behind it — where the SaaS application is hosted.</p>
+<p>NLB định tuyến lưu lượng đến các  <a href="https://aws.amazon.com/ec2/">Amazon Elastic Compute Cloud (Amazon EC2)</a> phía sau — nơi lưu trữ ứng dụng SaaS.</p>
 </li>
 </ol>
-<h2 id="solution-deployment">Solution Deployment</h2>
-<p>The following steps will guide you through implementing this solution.</p>
-<h3 id="step-1-saas-provider-vpc--set-up-privatelink-service">Step 1: SaaS Provider VPC — Set Up PrivateLink Service</h3>
-<p>Create a service powered by PrivateLink (Create a service powered by PrivateLink), called an <strong>endpoint service</strong>, as shown in the illustration below. In this example, the service is hosted on EC2 instances behind a Network Load Balancer (NLB). Make the endpoint service available (Make the endpoint service) so that users (service consumers) can access it.</p>
-<p><img src="/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/image11.png" alt="alt text">
-<em>Figure 2: VPC endpoint services showing registered Network Load Balancers (NLBs) in the Load balancers tab.</em></p>
-<h3 id="step-2-consumer-vpc--create-interface-vpc-endpoint">Step 2: Consumer VPC — Create Interface VPC Endpoint</h3>
-<p>In the <strong>Consumer VPC</strong>, create an <strong>interface VPC endpoint</strong> for the <strong>service name</strong> you created in Step 1, as illustrated in the figure below.</p>
-<p>To ensure <strong>High Availability</strong>, create this endpoint in at least two <strong>Availability Zones (AZs)</strong>.</p>
-<p>Note the <strong>Elastic Network Interface (ENI) IDs</strong> created by this endpoint, as they will be needed in subsequent steps.</p>
-<p><img src="/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/image5.png" alt="alt text">
-<em>Figure 3: VPC endpoints in the Consumer VPC showing the Subnets tab with subnet details and Network Interface IDs in two Availability Zones.</em></p>
-<h3 id="step-3-consumer-account--create-aws-verified-access">Step 3: Consumer Account — Create AWS Verified Access</h3>
-<h4 id="31-create-trust-provider">3.1. Create Trust Provider</h4>
-<p>Create a <strong>user-identity trust provider</strong> for Verified Access.</p>
-<p>In this example, we use <strong>IAM Identity Center</strong>, as illustrated in the figure below.</p>
-<p><img src="/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/image12.png" alt="alt text">
-<em>Figure 4: Verified Access trust provider type is IAM Identity Center.</em></p>
-<h4 id="32-create-verified-access-instance">3.2. Create Verified Access Instance</h4>
-<p>Create a <strong>Verified Access instance</strong>, as illustrated in the figure below.</p>
-<p>When creating the Verified Access Instance, you can <strong>associate</strong> it with the trust provider you created in the previous step.</p>
-<p><img src="/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/image15.png" alt="alt text">
-<em>Figure 5: Verified Access instance using iam-identity-center User type.</em></p>
-<h4 id="33-create-verified-access-group">3.3. Create Verified Access Group</h4>
-<p>Create a <strong>Verified Access group</strong>, as illustrated in the figure below.</p>
-<p>Assign this group to the Verified Access instance created in the previous step.</p>
-<p>Define the <strong>Verified Access group policy</strong> to manage access permissions. In this example, we allow access for verified email addresses with the domain <code>@amazon.com</code>.</p>
-<p><img src="/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/image7.png" alt="alt text">
-<em>Figure 6: Verified Access group policy.</em></p>
-<h4 id="34-create-network-interface-endpoint">3.4. Create Network Interface Endpoint</h4>
-<p>Create a <strong>network interface endpoint</strong> for Verified Access:</p>
+<h1 id="triển-khai-giải-pháp"><strong>Triển khai giải pháp</strong></h1>
+<p>Các bước sau đây sẽ hướng dẫn bạn thực hiện giải pháp này.</p>
+<h4 id="bước-1-saas-provider-vpc--thiết-lập-dịch-vụ-privatelink"><strong>Bước 1: SaaS provider VPC — thiết lập dịch vụ PrivateLink</strong></h4>
+<ol>
+<li>
+<p><strong>Tạo một dịch vụ sử dụng PrivateLink</strong> (<a href="https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html">Create a service powered by PrivateLink</a> ), được gọi là <strong>endpoint service</strong>, như thể hiện trong hình minh họa bên dưới.</p>
 <ul>
-<li>Select the Verified Access group you created in the previous step.</li>
-<li>In the <strong>Protocol</strong> section, select <strong>TCP</strong>.</li>
-<li>In <strong>Port ranges</strong>, enter <strong>&ldquo;443-443&rdquo;</strong>.</li>
-<li>In the <strong>Network interface</strong> section, select the ENI ID of the interface VPC endpoint you created in Step 2.</li>
-<li>You need to create one Verified Access endpoint for each ENI. When complete, you will have two Verified Access endpoints, as illustrated in the figure below.</li>
+<li>Trong ví dụ này, dịch vụ được <strong>lưu trữ trên các phiên bản EC2</strong> nằm <strong>sau một Network Load Balancer (NLB)</strong>.</li>
 </ul>
-<p><img src="/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/image3.png" alt="alt text">
-<em>Figure 7: Verified Access endpoint details.</em></p>
-<p>When you have completed the above steps, each Verified Access endpoint will have a separate DNS domain name. Note these domain names, as they will be used to configure the public hosted zone in Route 53. The figure below illustrates how to locate the endpoint domain name that was created.</p>
-<p><img src="/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/image10.png" alt="alt text">
-<em>Figure 8: Verified Access endpoint domain name.</em></p>
-<h3 id="step-4-create-dns-for-your-application">Step 4: Create DNS for Your Application</h3>
-<p>Create a <strong>weighted routing record</strong> in the <strong>Route 53 public hosted zone</strong>.</p>
-<p>Each Verified Access endpoint will have its own <strong>CNAME record</strong>, as illustrated in the figure below.</p>
-<p><img src="/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/image4.png" alt="alt text">
-<em>Figure 9: Route 53 hosted zone with CNAME records.</em></p>
-<hr>
-<h2 id="accessing-the-application-using-aws-verified-access">Accessing the Application Using AWS Verified Access</h2>
-<p>Once the Verified Access endpoint is ready, you can access the application using the Connectivity Client. Users need to download and install the latest version of the Connectivity Client on their preferred operating system (Windows or macOS). Before proceeding, uninstall any old versions of the client.</p>
-<p>Before logging in, users need to export the client configuration file, which can be done through the <strong>Amazon Virtual Private Cloud (Amazon VPC)</strong> console or <strong>AWS Command Line Interface (AWS CLI)</strong>. Then, the configuration files must be deployed to specific locations as follows:</p>
+</li>
+<li>
+<p><strong>Làm cho endpoint service có sẵn (<a href="https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html#share-endpoint-service">Make the endpoint service</a>)</strong> để người dùng (service consumers) có thể truy cập.</p>
+</li>
+</ol>
+<p><img src="#ZgotmplZ" alt=""></p>
+<p><em>Hình 2: Các dịch vụ VPC endpoint hiển thị các Network Load Balancer (NLB) đã được đăng ký.</em></p>
+<p><strong>Bước 2: Consumer VPC — Tạo interface VPC endpoint</strong></p>
+<ol>
+<li>Trong <strong>Consumer VPC</strong>, hãy <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/create-endpoint-service.html#connect-to-endpoint-service">create</a> một <strong>interface VPC endpoint</strong> cho <strong>tên dịch vụ (service name)</strong> mà bạn đã tạo ở <strong>Bước 1</strong>, như minh họa trong hình dưới đây.</li>
+</ol>
 <ul>
-<li><strong>For Windows:</strong> <code>C:\ProgramData\Connectivity Client</code></li>
-<li><strong>For macOS:</strong> <code>/Library/Application\ Support/Connectivity\Client</code></li>
+<li>Để đảm bảo <strong>tính sẵn sàng cao (High Availability)</strong>, hãy tạo endpoint này trong <strong>ít nhất hai vùng khả dụng ( <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones">Availability Zones</a>  - AZs)</strong>.</li>
+<li>Ghi chú lại <strong>ID của Elastic Network Interface (ENI)</strong> được tạo bởi endpoint này, vì chúng sẽ cần được sử dụng trong các bước tiếp theo.</li>
 </ul>
-<p>After completing these steps, users can launch the Connectivity Client and authenticate through the provided interface, as illustrated in the next figure.</p>
-<p><img src="/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/image9.png" alt="alt text">
-<em>Figure 10: Connectivity Client Sign in screen</em></p>
-<p>When you select <strong>Sign In</strong>, a browser window will appear asking you to enter your username and password. Then, you will see a permission request with the message &ldquo;Allow Connectivity Client to access your data?&rdquo; — you need to confirm to continue.</p>
-<p><img src="/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/image13.png" alt="alt text">
-<em>Figure 11: Allow Connectivity Client to access your data</em></p>
-<p>After selecting <strong>Allow access</strong>, your authentication process will be complete, as illustrated in the figure below.</p>
-<p><img src="/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/image8.png" alt="alt text">
-<em>Figure 13: Connectivity Client status when connected</em></p>
-<p>This process enables secure and verified access to the application. After successful authentication, the client establishes a secure channel to the Verified Access endpoint. Next, all traffic is routed through the ENI, connecting to the SaaS provider through PrivateLink. This optimized workflow ensures secure and efficient connectivity between users and applications, leveraging AWS services and security features.</p>
-<p>To access the application from a browser, navigate to the URL record you created in the Route 53 public hosted zone. The figure below illustrates that users can now access the application hosted in the SaaS provider&rsquo;s VPC, on EC2 instances behind a private NLB.</p>
-<p><img src="/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/image1.png" alt="alt text">
-<em>Figure 14: Welcome screen of the SaaS service provided through Verified Access via PrivateLink.</em></p>
-<hr>
-<h2 id="conclusion">Conclusion</h2>
-<p>AWS Verified Access provides a new way to establish secure, scalable, internet-based access to internal AWS resources, such as PrivateLink-based SaaS endpoints. Combining the capabilities of PrivateLink and Verified Access enables enterprises to build end-to-end secure application access workflows that are both straightforward and compliant.</p>
-<p>If you are a SaaS provider or consumer looking to enable secure external access to PrivateLink services, Verified Access offers a powerful solution with minimal operational overhead. Begin today with Verified Access features that enable resource access over non-HTTP(S) protocols.</p>
-<h3 id="references">References</h3>
+<p><img src="#ZgotmplZ" alt=""></p>
+<p><em>Hình 3: Các VPC endpoint trong Consumer VPC và các subnet nơi chúng được triển khai.</em></p>
+<p><strong>Bước 3: Tài khoản người dùng (Consumer account) — Tạo AWS Verified Access</strong></p>
+<ol>
+<li>Tạo (<a href="https://docs.aws.amazon.com/verified-access/latest/ug/user-trust.html">Create</a>) <strong>nhà cung cấp xác thực danh tính người dùng (user-identity trust provider)</strong> cho <strong>Verified Access</strong>.</li>
+</ol>
 <ul>
-<li><a href="https://docs.aws.amazon.com/vpc/latest/privatelink/">Access AWS services through AWS PrivateLink</a></li>
+<li>Trong ví dụ này, chúng tôi sử dụng <strong>IAM Identity Center</strong>, như minh họa trong hình dưới đây.</li>
+</ul>
+<p><img src="#ZgotmplZ" alt=""></p>
+<p><em>Hình 4: Loại nhà cung cấp xác thực (trust provider) của Verified Access là IAM Identity Center.</em></p>
+<ol start="2">
+<li>Tạo (<a href="https://docs.aws.amazon.com/verified-access/latest/ug/create-verified-access-instance.html">Create</a>) một <strong>Verified Access instance</strong>, như minh họa trong hình dưới đây.</li>
+</ol>
+<ul>
+<li>Khi tạo <strong>Verified Access Instance</strong>, bạn có thể <strong>liên kết (associate)</strong> nó với <strong>trust provider</strong> mà bạn đã tạo ở bước trước đó.</li>
+</ul>
+<p><img src="#ZgotmplZ" alt=""></p>
+<p><em>Hình 5: Verified Access instance sử dụng iam-identity-center phân loại người dùng (User type).</em></p>
+<ol start="3">
+<li>Tạo một <strong>Verified Access group</strong>, như minh họa trong hình dưới đây.</li>
+</ol>
+<ul>
+<li>Gán (assign) nhóm này cho Verified Access instance đã được tạo ở bước trước.</li>
+<li>Xác định (define) chính sách nhóm Verified Access (Verified Access group policy) để quản lý quyền truy cập. Trong ví dụ này, chúng tôi cho phép truy cập đối với các địa chỉ email đã được xác minh (verified email addresses) có tên miền @amazon.com.</li>
+</ul>
+<p><img src="#ZgotmplZ" alt=""></p>
+<p><em>Hình 6: Chính sách nhóm (group policy) của Verified Access.</em></p>
+<ol start="4">
+<li><a href="https://docs.aws.amazon.com/verified-access/latest/ug/create-network-interface-endpoint.html">Tạo</a> network interface endpoint cho Verified Access:</li>
+</ol>
+<ul>
+<li>
+<p>Chọn Verified Access group mà bạn đã tạo ở bước trước.</p>
+</li>
+<li>
+<p>Ở phần Protocol, chọn <strong>TCP.</strong></p>
+</li>
+<li>
+<p>Trong Port ranges, nhập “443-443”.</p>
+</li>
+<li>
+<p>Ở phần <strong>Network interface</strong>, chọn ENI ID của interface VPC endpoint mà bạn đã tạo ở Bước 2. Bạn cần tạo một Verified Access endpoint cho mỗi ENI. Khi hoàn tất, bạn sẽ có hai Verified Access endpoints, như minh họa trong hình dưới đây.</p>
+</li>
+</ul>
+<p><img src="#ZgotmplZ" alt=""></p>
+<p><em>Hình 7: Thông tin chi tiết (details) của Verified Access endpoint.</em></p>
+<p>Khi bạn đã hoàn thành các bước trên, mỗi Verified Access endpoint sẽ có một tên miền DNS riêng biệt. Hãy ghi lại các tên miền này, vì chúng sẽ được sử dụng để cấu hình public hosted zone trong Route 53. Hình dưới đây minh họa cách xác định (locate) tên miền endpoint đã được tạo.</p>
+<p><img src="#ZgotmplZ" alt=""></p>
+<p><em>Hình 8: Tên miền (domain name) của Verified Access endpoint.</em></p>
+<p><strong>Bước 4: Tạo DNS cho ứng dụng của bạn</strong></p>
+<ol>
+<li><a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html">Tạo</a> một <strong>bản ghi định tuyến có trọng số (<a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-weighted.html">weighted record</a>)</strong> trong <strong>Route 53 <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/AboutHZWorkingWith.html">public hosted zone</a></strong>.</li>
+</ol>
+<ul>
+<li>Mỗi <strong>Verified Access endpoint</strong> sẽ có <strong>bản ghi <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-choosing-alias-non-alias.html">CNAME</a> riêng</strong>, như minh họa trong hình dưới đây.</li>
+</ul>
+<p><img src="#ZgotmplZ" alt=""></p>
+<p><em>Hình 9: Route 53 hosted zone với các bản ghi CNAME.</em></p>
+<h1 id="truy-cập-ứng-dụng-bằng-aws-verified-access"><strong>Truy cập ứng dụng bằng AWS Verified Access</strong></h1>
+<p>Khi Verified Access endpoint đã sẵn sàng, bạn có thể truy cập ứng dụng bằng Connectivity Client. Người dùng cần tải xuống (<a href="https://docs.aws.amazon.com/verified-access/latest/ug/connectivity-client.html#connectivity-client-download">download</a>) và cài đặt phiên bản mới nhất của Connectivity Client trên hệ điều hành ưa thích của họ (Windows hoặc macOS). Trước khi tiếp tục, hãy gỡ cài đặt bất kỳ phiên bản cũ nào của client. Trước khi đăng nhập, người dùng cần xuất (<a href="https://docs.aws.amazon.com/verified-access/latest/ug/connectivity-client.html#connectivity-client-export-configuration">export</a>) tệp cấu hình client, thao tác này có thể được thực hiện thông qua <a href="https://aws.amazon.com/vi/vpc/">Amazon Virtual Private Cloud (Amazon VPC)</a> console hoặc <a href="https://aws.amazon.com/vi/cli/">AWS Command Line Interface (AWS CLI)</a>. Sau đó, các tệp cấu hình (<a href="https://docs.aws.amazon.com/verified-access/latest/ug/connectivity-client.html#connectivity-client-connect">configuration files</a>) phải được triển khai vào các vị trí cụ thể như sau:</p>
+<ul>
+<li>
+<p>Đối với Windows: C:\ProgramData\Connectivity Client</p>
+</li>
+<li>
+<p>Đối với macOS: /Library/Application\ Support/Connectivity\Client</p>
+</li>
+</ul>
+<p>Sau khi hoàn thành các bước này, người dùng có thể khởi chạy Connectivity Client và xác thực (authenticate) thông qua giao diện được cung cấp, như minh họa trong hình tiếp theo.</p>
+<p><img src="#ZgotmplZ" alt=""></p>
+<p><em>Hình 10: Màn hình đăng nhập (Sign in) của Connectivity Client</em></p>
+<p>Khi bạn chọn <strong>Sign In</strong>, một cửa sổ trình duyệt sẽ xuất hiện yêu cầu bạn <strong>nhập tên người dùng (username)</strong> và <strong>mật khẩu (password)</strong>. Sau đó, bạn sẽ thấy một <strong>yêu cầu cấp quyền (permission request)</strong> với nội dung <strong>“Allow Connectivity Client to access your data?”</strong> — bạn cần <strong>xác nhận (confirm)</strong> để tiếp tục.</p>
+<p><img src="#ZgotmplZ" alt=""></p>
+<p><em>Hình 11: Cho phép Connectivity Client truy cập dữ liệu của bạn (Allow Connectivity Client to access your data)</em></p>
+<p>Sau khi chọn <strong>Allow access (Cho phép truy cập)</strong>, quá trình <strong>xác thực (authentication)</strong> của bạn sẽ <strong>hoàn tất</strong>, như minh họa trong hình dưới đây.</p>
+<p><img src="#ZgotmplZ" alt=""></p>
+<p><em>Hình 13: Trạng thái của Connectivity Client khi đã được kết nối (connected)</em></p>
+<p>Quy trình này cho phép truy cập ứng dụng một cách an toàn và được xác minh (secure and verified access). Sau khi xác thực thành công, client sẽ thiết lập một kênh kết nối bảo mật (secure channel) đến Verified Access endpoint. Tiếp theo, toàn bộ lưu lượng truy cập (traffic) sẽ được định tuyến (routed) thông qua ENI, kết nối đến nhà cung cấp SaaS (SaaS provider) thông qua PrivateLink. Luồng hoạt động được tối ưu hóa này đảm bảo kết nối an toàn và hiệu quả giữa người dùng và ứng dụng, tận dụng các dịch vụ và tính năng bảo mật của AWS.</p>
+<p>Để truy cập ứng dụng từ trình duyệt, hãy điều hướng đến URL record mà bạn đã tạo trong Route 53 public hosted zone. Hình dưới đây minh họa việc người dùng hiện có thể truy cập ứng dụng được lưu trữ trong VPC của nhà cung cấp SaaS, trên các instance EC2 nằm phía sau NLB riêng (private NLB).</p>
+<p><img src="#ZgotmplZ" alt=""></p>
+<p><em>Hình 14: Màn hình chào mừng (Welcome screen) của dịch vụ SaaS được cung cấp thông qua Verified Access qua PrivateLink.</em></p>
+<h1 id="kết-luận"><strong>Kết luận</strong></h1>
+<p>AWS Verified Access mang đến một cách thức mới để thiết lập kết nối an toàn, có khả năng mở rộng và truy cập qua internet đến các tài nguyên nội bộ của AWS, chẳng hạn như các endpoint SaaS dựa trên PrivateLink. Việc kết hợp khả năng của PrivateLink và Verified Access cho phép doanh nghiệp xây dựng quy trình truy cập ứng dụng bảo mật từ đầu đến cuối (end-to-end) vừa trực tiếp vừa tuân thủ.</p>
+<p>Nếu bạn là nhà cung cấp hoặc người tiêu dùng SaaS đang tìm cách kích hoạt truy cập bên ngoài an toàn đến các dịch vụ PrivateLink, thì Verified Access mang đến một giải pháp mạnh mẽ với chi phí vận hành tối thiểu. Bắt đầu (<a href="https://aws.amazon.com/about-aws/whats-new/2025/02/aws-verified-access-zero-trust-resources-non-https-protocols/">Begin</a>) ngay hôm nay với các tính năng của Verified Access, cho phép truy cập tài nguyên qua các giao thức phi HTTP(S).</p>
+<ul>
+<li><a href="https://docs.aws.amazon.com/vpc/latest/privatelink/what-is-privatelink.html">Access AWS services through AWS PrivateLink</a></li>
 <li><a href="https://docs.aws.amazon.com/verified-access/latest/ug/what-is-verified-access.html">What is AWS Verified Access?</a></li>
 </ul>
+<h1 id="về-tác-giả"><strong>Về tác giả</strong></h1>
+<p><strong>Salman Ahmed</strong><br>
+Salman Ahmed là Quản lý Tài khoản Kỹ thuật Cấp cao (Senior Technical Account Manager) tại AWS Enterprise Support. Anh chuyên hỗ trợ khách hàng trong việc thiết kế, triển khai và vận hành các giải pháp AWS. Kết hợp kiến thức chuyên sâu về mạng với niềm đam mê khám phá công nghệ mới, Salman giúp các tổ chức thành công trong hành trình chuyển đổi lên đám mây. Ngoài công việc, anh yêu thích nhiếp ảnh, du lịch, và theo dõi các đội thể thao yêu thích của mình.</p>
 <hr>
-<h2 id="about-the-authors">About the Authors</h2>
-<p><strong>Salman Ahmed</strong></p>
-<p><img src="/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/image2.png" alt="Salman Ahmed"></p>
-<p>Salman Ahmed is a Senior Technical Account Manager at AWS Enterprise Support. He specializes in helping customers design, deploy, and operate AWS solutions. Combining deep networking expertise with a passion for exploring new technologies, Salman helps organizations succeed in their cloud transformation journey. Outside of work, he enjoys photography, travel, and following his favorite sports teams.</p>
-<p><strong>Ankush Goyal</strong></p>
-<p><img src="/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/image6.png" alt="Ankush Goyal"></p>
-<p>Ankush Goyal is a Senior Technical Account Manager at AWS Enterprise Support, specializing in helping customers in the travel and hospitality industry optimize their cloud infrastructure. With over 20 years of experience in IT, he focuses on leveraging AWS networking services to enhance operational efficiency and drive cloud adoption. Ankush is passionate about delivering practical solutions that help customers simplify and optimize their operations on the cloud platform.</p>
-<hr>
-<p><strong>Original Article Source:</strong> <a href="https://aws.amazon.com/blogs/networking-and-content-delivery/">AWS Networking &amp; Content Delivery Blog</a></p>
+<p><strong>Ankush Goyal</strong><br>
+Ankush Goyal là Quản lý Tài khoản Kỹ thuật Cấp cao (Senior Technical Account Manager) tại AWS Enterprise Support, chuyên hỗ trợ khách hàng trong lĩnh vực du lịch và khách sạn tối ưu hạ tầng đám mây của họ. Với hơn 20 năm kinh nghiệm trong lĩnh vực CNTT, anh tập trung vào việc tận dụng các dịch vụ mạng của AWS để nâng cao hiệu quả vận hành và thúc đẩy việc ứng dụng đám mây. Ankush đam mê mang đến các giải pháp có tác động thực tiễn, giúp khách hàng đơn giản hóa và tối ưu hóa hoạt động trên nền tảng đám mây.</p>
+<p><a href="https://aws.amazon.com/blogs/networking-and-content-delivery/secure-internet-based-access-to-saas-privatelink-endpoints-using-aws-verified-access/">Link blogs</a></p>
+<h2></h2>
 
 
-
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -1562,8 +1572,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -1583,6 +1591,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1951,10 +1962,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/learning--aws--fcj2025/3-blogstranslated/3.6-blog6/" title="Blog 6"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/" title="Secure internet-based access to SaaS PrivateLink endpoints using AWS Verified Access"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/learning--aws--fcj2025/3-blogstranslated/3.1-blog1/secure-internet-based-access-to-saas-privatelink-endpoints-using-aws-verified-access--networking--content-delivery/" title="" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/learning--aws--fcj2025/3-blogstranslated/3.2-blog2/" title="Streamlining RISE with SAP Connectivity using AWS Cloud WAN" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
