@@ -1,127 +1,198 @@
 ﻿---
-title: "Blog 1"
-date: 2025-09-10
+title: "Secure Internet-Based Access to SaaS PrivateLink Endpoints Using AWS Verified Access"
+date: 2024-08-21
 weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# Getting Started with Healthcare Data Lakes: Using Microservices
+**Authors:** Salman Ahmed and Ankush Goyal | **Date:** August 21, 2025
 
-Data lakes can help hospitals and healthcare facilities turn data into business insights, maintain business continuity, and protect patient privacy. A **data lake** is a centralized, managed, and secure repository to store all your data, both in its raw and processed forms for analysis. Data lakes allow you to break down data silos and combine different types of analytics to gain insights and make better business decisions.
-
-This blog post is part of a larger series on getting started with setting up a healthcare data lake. In my final post of the series, *“Getting Started with Healthcare Data Lakes: Diving into Amazon Cognito”*, I focused on the specifics of using Amazon Cognito and Attribute Based Access Control (ABAC) to authenticate and authorize users in the healthcare data lake solution. In this blog, I detail how the solution evolved at a foundational level, including the design decisions I made and the additional features used. You can access the code samples for the solution in this Git repo for reference.
+**Categories:** [AWS PrivateLink](https://aws.amazon.com/privatelink/), [AWS Verified Access](https://aws.amazon.com/verified-access/), [Networking & Content Delivery](https://aws.amazon.com/products/networking/), [SaaS](https://aws.amazon.com/saas/), [Technical How-to](https://aws.amazon.com/blogs/networking-and-content-delivery/category/post-types/technical-how-to/)
 
 ---
 
-## Architecture Guidance
+## Introduction
 
-The main change since the last presentation of the overall architecture is the decomposition of a single service into a set of smaller services to improve maintainability and flexibility. Integrating a large volume of diverse healthcare data often requires specialized connectors for each format; by keeping them encapsulated separately as microservices, we can add, remove, and modify each connector without affecting the others. The microservices are loosely coupled via publish/subscribe messaging centered in what I call the “pub/sub hub.”
+As cloud adoption continues to grow, software-as-a-service (SaaS) providers on AWS increasingly use **Amazon Web Services (AWS) PrivateLink** to deliver services to customers securely.
 
-This solution represents what I would consider another reasonable sprint iteration from my last post. The scope is still limited to the ingestion and basic parsing of **HL7v2 messages** formatted in **Encoding Rules 7 (ER7)** through a REST interface.
+PrivateLink enables private, seamless connectivity between VPCs without exposing applications to the public internet, ensuring strong security and stable network performance.
 
-**The solution architecture is now as follows:**
+However, what if you want to provide that same level of secure access to users outside of AWS — such as remote employees or partners connecting via the internet? **AWS Verified Access** allows you to extend PrivateLink-powered services to authorized users over the internet while maintaining strict security barriers and a **zero trust** architecture.
 
-> *Figure 1. Overall architecture; colored boxes represent distinct services.*
+In this post, we'll explore how to enable secure, scalable, internet-based access to PrivateLink endpoints using Verified Access. This helps organizations extend SaaS integration capabilities to users anywhere — without compromising security.
 
----
-
-While the term *microservices* has some inherent ambiguity, certain traits are common:  
-- Small, autonomous, loosely coupled  
-- Reusable, communicating through well-defined interfaces  
-- Specialized to do one thing well  
-- Often implemented in an **event-driven architecture**
-
-When determining where to draw boundaries between microservices, consider:  
-- **Intrinsic**: technology used, performance, reliability, scalability  
-- **Extrinsic**: dependent functionality, rate of change, reusability  
-- **Human**: team ownership, managing *cognitive load*
+_(This post assumes you are already familiar with the basic concepts of AWS Verified Access, so we won't delve into foundational knowledge.)_
 
 ---
 
-## Technology Choices and Communication Scope
+## Solution Overview
 
-| Communication scope                       | Technologies / patterns to consider                                                        |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Within a single microservice              | Amazon Simple Queue Service (Amazon SQS), AWS Step Functions                               |
-| Between microservices in a single service | AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS) |
-| Between services                          | Amazon EventBridge, AWS Cloud Map, Amazon API Gateway                                      |
+We'll start with a scenario involving secure access to a SaaS application. In this case, the SaaS provider offers their application through a PrivateLink endpoint service, while users set up an interface VPC endpoint in their VPC to connect to this service. This is illustrated in the architecture diagram in the following section.
+
+The challenge arises when users in the organization need to access this service from outside AWS, for example, via the internet. We deploy Verified Access as a solution to establish this connection, since PrivateLink endpoints can only be accessed from within a VPC or through private network connections such as **AWS Site-to-Site VPN** or **AWS Direct Connect**. This solution does not require cross-Region PrivateLink connections, as it relies on same-Region connectivity within AWS.
+
+![alt text](image14.png)
+_Figure 1: Architecture diagram showing user requests using Verified Access endpoints to access SaaS services hosted in the SaaS account._
+
+### Traffic Flow
+
+Using Verified Access means the traffic flow occurs as follows:
+
+1. Remote users with the **Verified Access Connectivity Client** installed send requests to a public URL provided by the consumer VPC owner, which points to AWS Verified Access endpoints. The Verified Access Connectivity Client enables secure connectivity between user devices and applications that don't use HTTP(s).
+
+2. In the consumer account, there is an **Amazon Route 53 public hosted zone** containing weighted routing records that help load balance traffic between two AWS Verified Access endpoints.
+
+3. Each Verified Access endpoint is mapped to a specific interface VPC endpoint.
+
+4. Users are authenticated using **AWS IAM Identity Center**.
+
+5. Requests from the interface VPC endpoint are forwarded through PrivateLink to a **Network Load Balancer (NLB)** in the SaaS VPC.
+
+6. The NLB routes traffic to **Amazon Elastic Compute Cloud (Amazon EC2)** instances behind it — where the SaaS application is hosted.
+
+## Solution Deployment
+
+The following steps will guide you through implementing this solution.
+
+### Step 1: SaaS Provider VPC — Set Up PrivateLink Service
+
+Create a service powered by PrivateLink (Create a service powered by PrivateLink), called an **endpoint service**, as shown in the illustration below. In this example, the service is hosted on EC2 instances behind a Network Load Balancer (NLB). Make the endpoint service available (Make the endpoint service) so that users (service consumers) can access it.
+
+![alt text](image11.png)
+_Figure 2: VPC endpoint services showing registered Network Load Balancers (NLBs) in the Load balancers tab._
+
+### Step 2: Consumer VPC — Create Interface VPC Endpoint
+
+In the **Consumer VPC**, create an **interface VPC endpoint** for the **service name** you created in Step 1, as illustrated in the figure below.
+
+To ensure **High Availability**, create this endpoint in at least two **Availability Zones (AZs)**.
+
+Note the **Elastic Network Interface (ENI) IDs** created by this endpoint, as they will be needed in subsequent steps.
+
+![alt text](image5.png)
+_Figure 3: VPC endpoints in the Consumer VPC showing the Subnets tab with subnet details and Network Interface IDs in two Availability Zones._
+
+### Step 3: Consumer Account — Create AWS Verified Access
+
+#### 3.1. Create Trust Provider
+
+Create a **user-identity trust provider** for Verified Access.
+
+In this example, we use **IAM Identity Center**, as illustrated in the figure below.
+
+![alt text](image12.png)
+_Figure 4: Verified Access trust provider type is IAM Identity Center._
+
+#### 3.2. Create Verified Access Instance
+
+Create a **Verified Access instance**, as illustrated in the figure below.
+
+When creating the Verified Access Instance, you can **associate** it with the trust provider you created in the previous step.
+
+![alt text](image15.png)
+_Figure 5: Verified Access instance using iam-identity-center User type._
+
+#### 3.3. Create Verified Access Group
+
+Create a **Verified Access group**, as illustrated in the figure below.
+
+Assign this group to the Verified Access instance created in the previous step.
+
+Define the **Verified Access group policy** to manage access permissions. In this example, we allow access for verified email addresses with the domain `@amazon.com`.
+
+![alt text](image7.png)
+_Figure 6: Verified Access group policy._
+
+#### 3.4. Create Network Interface Endpoint
+
+Create a **network interface endpoint** for Verified Access:
+
+- Select the Verified Access group you created in the previous step.
+- In the **Protocol** section, select **TCP**.
+- In **Port ranges**, enter **"443-443"**.
+- In the **Network interface** section, select the ENI ID of the interface VPC endpoint you created in Step 2.
+- You need to create one Verified Access endpoint for each ENI. When complete, you will have two Verified Access endpoints, as illustrated in the figure below.
+
+![alt text](image3.png)
+_Figure 7: Verified Access endpoint details._
+
+When you have completed the above steps, each Verified Access endpoint will have a separate DNS domain name. Note these domain names, as they will be used to configure the public hosted zone in Route 53. The figure below illustrates how to locate the endpoint domain name that was created.
+
+![alt text](image10.png)
+_Figure 8: Verified Access endpoint domain name._
+
+### Step 4: Create DNS for Your Application
+
+Create a **weighted routing record** in the **Route 53 public hosted zone**.
+
+Each Verified Access endpoint will have its own **CNAME record**, as illustrated in the figure below.
+
+![alt text](image4.png)
+_Figure 9: Route 53 hosted zone with CNAME records._
 
 ---
 
-## The Pub/Sub Hub
+## Accessing the Application Using AWS Verified Access
 
-Using a **hub-and-spoke** architecture (or message broker) works well with a small number of tightly related microservices.  
-- Each microservice depends only on the *hub*  
-- Inter-microservice connections are limited to the contents of the published message  
-- Reduces the number of synchronous calls since pub/sub is a one-way asynchronous *push*
+Once the Verified Access endpoint is ready, you can access the application using the Connectivity Client. Users need to download and install the latest version of the Connectivity Client on their preferred operating system (Windows or macOS). Before proceeding, uninstall any old versions of the client.
 
-Drawback: **coordination and monitoring** are needed to avoid microservices processing the wrong message.
+Before logging in, users need to export the client configuration file, which can be done through the **Amazon Virtual Private Cloud (Amazon VPC)** console or **AWS Command Line Interface (AWS CLI)**. Then, the configuration files must be deployed to specific locations as follows:
 
----
+- **For Windows:** `C:\ProgramData\Connectivity Client`
+- **For macOS:** `/Library/Application\ Support/Connectivity\Client`
 
-## Core Microservice
+After completing these steps, users can launch the Connectivity Client and authenticate through the provided interface, as illustrated in the next figure.
 
-Provides foundational data and communication layer, including:  
-- **Amazon S3** bucket for data  
-- **Amazon DynamoDB** for data catalog  
-- **AWS Lambda** to write messages into the data lake and catalog  
-- **Amazon SNS** topic as the *hub*  
-- **Amazon S3** bucket for artifacts such as Lambda code
+![alt text](image9.png)
+_Figure 10: Connectivity Client Sign in screen_
 
-> Only allow indirect write access to the data lake through a Lambda function → ensures consistency.
+When you select **Sign In**, a browser window will appear asking you to enter your username and password. Then, you will see a permission request with the message "Allow Connectivity Client to access your data?" — you need to confirm to continue.
 
----
+![alt text](image13.png)
+_Figure 11: Allow Connectivity Client to access your data_
 
-## Front Door Microservice
+After selecting **Allow access**, your authentication process will be complete, as illustrated in the figure below.
 
-- Provides an API Gateway for external REST interaction  
-- Authentication & authorization based on **OIDC** via **Amazon Cognito**  
-- Self-managed *deduplication* mechanism using DynamoDB instead of SNS FIFO because:  
-  1. SNS deduplication TTL is only 5 minutes  
-  2. SNS FIFO requires SQS FIFO  
-  3. Ability to proactively notify the sender that the message is a duplicate  
+![alt text](image8.png)
+_Figure 13: Connectivity Client status when connected_
+
+This process enables secure and verified access to the application. After successful authentication, the client establishes a secure channel to the Verified Access endpoint. Next, all traffic is routed through the ENI, connecting to the SaaS provider through PrivateLink. This optimized workflow ensures secure and efficient connectivity between users and applications, leveraging AWS services and security features.
+
+To access the application from a browser, navigate to the URL record you created in the Route 53 public hosted zone. The figure below illustrates that users can now access the application hosted in the SaaS provider's VPC, on EC2 instances behind a private NLB.
+
+![alt text](image1.png)
+_Figure 14: Welcome screen of the SaaS service provided through Verified Access via PrivateLink._
 
 ---
 
-## Staging ER7 Microservice
+## Conclusion
 
-- Lambda “trigger” subscribed to the pub/sub hub, filtering messages by attribute  
-- Step Functions Express Workflow to convert ER7 → JSON  
-- Two Lambdas:  
-  1. Fix ER7 formatting (newline, carriage return)  
-  2. Parsing logic  
-- Result or error is pushed back into the pub/sub hub  
+AWS Verified Access provides a new way to establish secure, scalable, internet-based access to internal AWS resources, such as PrivateLink-based SaaS endpoints. Combining the capabilities of PrivateLink and Verified Access enables enterprises to build end-to-end secure application access workflows that are both straightforward and compliant.
+
+If you are a SaaS provider or consumer looking to enable secure external access to PrivateLink services, Verified Access offers a powerful solution with minimal operational overhead. Begin today with Verified Access features that enable resource access over non-HTTP(S) protocols.
+
+### References
+
+- [Access AWS services through AWS PrivateLink](https://docs.aws.amazon.com/vpc/latest/privatelink/)
+- [What is AWS Verified Access?](https://docs.aws.amazon.com/verified-access/latest/ug/what-is-verified-access.html)
 
 ---
 
-## New Features in the Solution
+## About the Authors
 
-### 1. AWS CloudFormation Cross-Stack References
-Example *outputs* in the core microservice:
-```yaml
-Outputs:
-  Bucket:
-    Value: !Ref Bucket
-    Export:
-      Name: !Sub ${AWS::StackName}-Bucket
-  ArtifactBucket:
-    Value: !Ref ArtifactBucket
-    Export:
-      Name: !Sub ${AWS::StackName}-ArtifactBucket
-  Topic:
-    Value: !Ref Topic
-    Export:
-      Name: !Sub ${AWS::StackName}-Topic
-  Catalog:
-    Value: !Ref Catalog
-    Export:
-      Name: !Sub ${AWS::StackName}-Catalog
-  CatalogArn:
-    Value: !GetAtt Catalog.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-CatalogArn
+**Salman Ahmed**
 
+![Salman Ahmed](image2.png)
+
+Salman Ahmed is a Senior Technical Account Manager at AWS Enterprise Support. He specializes in helping customers design, deploy, and operate AWS solutions. Combining deep networking expertise with a passion for exploring new technologies, Salman helps organizations succeed in their cloud transformation journey. Outside of work, he enjoys photography, travel, and following his favorite sports teams.
+
+**Ankush Goyal**
+
+![Ankush Goyal](image6.png)
+
+Ankush Goyal is a Senior Technical Account Manager at AWS Enterprise Support, specializing in helping customers in the travel and hospitality industry optimize their cloud infrastructure. With over 20 years of experience in IT, he focuses on leveraging AWS networking services to enhance operational efficiency and drive cloud adoption. Ankush is passionate about delivering practical solutions that help customers simplify and optimize their operations on the cloud platform.
+
+---
+
+**Original Article Source:** [AWS Networking & Content Delivery Blog](https://aws.amazon.com/blogs/networking-and-content-delivery/)
