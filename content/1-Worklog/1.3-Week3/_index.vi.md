@@ -99,8 +99,3 @@ pre: " <b> 1.3. </b> "
 - [S3 Versioning Best Practices](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html) - Hướng dẫn kiểm soát phiên bản
 - [CloudFront Best Practices](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/best-practices.html) - Tối ưu CDN
 - [Auto Scaling Best Practices](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-best-practices.html) - Chiến lược Scaling
-
-**Tài Nguyên Chứng Chỉ AWS:**
-- [AWS Certified Cloud Practitioner (CLF-C01)](https://aws.amazon.com/certification/certified-cloud-practitioner/) - Chứng chỉ nền tảng
-- [AWS Certified Solutions Architect Associate (SAA-C03)](https://aws.amazon.com/certification/certified-solutions-architect-associate/) - Chứng chỉ cấp Associate
-- [EC2 for SAA-C03](https://explore.skillbuilder.aws/learn/course/external/view/elearning/125/exam-readiness-aws-certified-solutions-architect-associate) - Khóa học chuẩn bị thi

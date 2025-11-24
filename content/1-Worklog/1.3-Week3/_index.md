@@ -99,8 +99,3 @@ pre: " <b> 1.3. </b> "
 - [S3 Versioning Best Practices](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html) - Version control guide
 - [CloudFront Best Practices](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/best-practices.html) - CDN optimization
 - [Auto Scaling Best Practices](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-best-practices.html) - Scaling strategies
-
-**AWS Certification Resources:**
-- [AWS Certified Cloud Practitioner (CLF-C01)](https://aws.amazon.com/certification/certified-cloud-practitioner/) - Foundation certification
-- [AWS Certified Solutions Architect Associate (SAA-C03)](https://aws.amazon.com/certification/certified-solutions-architect-associate/) - Associate level certification
-- [EC2 for SAA-C03](https://explore.skillbuilder.aws/learn/course/external/view/elearning/125/exam-readiness-aws-certified-solutions-architect-associate) - Exam prep course
