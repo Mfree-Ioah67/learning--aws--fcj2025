@@ -45,19 +45,19 @@ _Hình 1. Kiến trúc tổng thể Multi-Region và multi-account AWS Cloud WAN
 
 Các bước sau đây phác thảo quy trình tích hợp cho mạng AWS của bạn (sử dụng Cloud WAN) với RISE with SAP. Trong phần này, chúng ta tập trung vào việc xác định các bước cấu hình của quá trình tích hợp.
 
-* Bạn cần tạo Global Network và Core Network với một policy document xác định cấu trúc mạng của bạn: các AWS Regions, segments, routing actions, và attachment policies. Kiểm tra [AWS documentation](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-policies-json.html) để biết thêm thông tin chi tiết về thiết lập này.  
+- Bạn cần tạo Global Network và Core Network với một policy document xác định cấu trúc mạng của bạn: các AWS Regions, segments, routing actions, và attachment policies. Kiểm tra [AWS documentation](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-policies-json.html) để biết thêm thông tin chi tiết về thiết lập này.  
    Chúng tôi khuyến nghị sử dụng một dedicated segment riêng cho các kết nối RISE with SAP VPC. Việc phân tách tối thiểu trong cấu hình Cloud WAN — với các VPC được kết nối vào một segment riêng biệt — cho phép kiểm soát tốt hơn cấu hình định tuyến (thêm lớp kiểm tra, tạo các static routes hoặc blackholes, v.v.).
 
-* Để tuân theo thực hành tốt nhất trong việc bao gồm lớp kiểm tra lưu lượng (inspection layer), bạn nên triển khai một Inspection VPC sử dụng Network Firewall hoặc GWLB cùng với các thiết bị bảo mật của bên thứ ba. Ngoài ra, policy document của bạn cần chèn firewall này giữa khối lượng công việc (workload) của bạn và các RISE with SAP VPCs.
+- Để tuân theo thực hành tốt nhất trong việc bao gồm lớp kiểm tra lưu lượng (inspection layer), bạn nên triển khai một Inspection VPC sử dụng Network Firewall hoặc GWLB cùng với các thiết bị bảo mật của bên thứ ba. Ngoài ra, policy document của bạn cần chèn firewall này giữa khối lượng công việc (workload) của bạn và các RISE with SAP VPCs.
 
-* Chia sẻ Core Network với tài khoản RISE with SAP bằng [AWS Resource Access Manager](https://aws.amazon.com/ram/) (AWS RAM). Kiểm tra documentation để hiểu cách bạn có thể chia sẻ tài nguyên thông qua AWS RAM.  
+- Chia sẻ Core Network với tài khoản RISE with SAP bằng [AWS Resource Access Manager](https://aws.amazon.com/ram/) (AWS RAM). Kiểm tra documentation để hiểu cách bạn có thể chia sẻ tài nguyên thông qua AWS RAM.  
    Core Network là tài nguyên toàn cầu, do đó việc chia sẻ phải được thực hiện từ Region N. Virginia (us-east-1).
 
-* Làm việc với nhóm RISE with SAP để chấp nhận Core Network invitation đã được chia sẻ. Nhóm RISE with SAP cần thực hiện các hành động sau:
+- Làm việc với nhóm RISE with SAP để chấp nhận Core Network invitation đã được chia sẻ. Nhóm RISE with SAP cần thực hiện các hành động sau:
 
-  * Chấp nhận shared Core Network invitation.
-  * Cấu hình các VPC attachments để kết nối với shared Core Network.
-  * Thêm các private network routes cần thiết trong subnet route table để đảm bảo giao tiếp hai chiều liền mạch.
+  - Chấp nhận shared Core Network invitation.
+  - Cấu hình các VPC attachments để kết nối với shared Core Network.
+  - Thêm các private network routes cần thiết trong subnet route table để đảm bảo giao tiếp hai chiều liền mạch.
 
 Thiết lập này cho phép chia sẻ mạng an toàn và đảm bảo kết nối giữa môi trường AWS account của người dùng và môi trường RISE with SAP. Các yếu tố cần xem xét bao gồm việc tránh trùng lặp CIDR blocks, giám sát chi phí truyền dữ liệu, thường xuyên kiểm tra quy tắc tường lửa (firewall rules), và sử dụng [AWS CloudTrail](https://aws.amazon.com/cloudtrail/) cho mục đích kiểm toán.
 
@@ -78,9 +78,7 @@ _Hình 2. Ví dụ về kiến trúc AWS Cloud WAN có lớp kiểm tra lưu lư
   "version": "2021.12",
   "core-network-configuration": {
     "vpn-ecmp-support": true,
-    "asn-ranges": [
-      "64496-64500"
-    ],
+    "asn-ranges": ["64496-64500"],
     "edge-locations": [
       {
         "location": "us-east-1",
@@ -115,14 +113,10 @@ _Hình 2. Ví dụ về kiến trúc AWS Cloud WAN có lớp kiểm tra lưu lư
       "segment": "vpcs",
       "mode": "dual-hop",
       "when-sent-to": {
-        "segments": [
-          "saprise"
-        ]
+        "segments": ["saprise"]
       },
       "via": {
-        "network-function-groups": [
-          "inspectionVpcs"
-        ]
+        "network-function-groups": ["inspectionVpcs"]
       }
     }
   ],
@@ -209,7 +203,7 @@ Chúng tôi khuyến nghị sử dụng một segment riêng biệt dành cho c�
 
 Sau khi thiết lập các phân đoạn mạng (network segments), hãy xem xét các khuyến nghị sau để tăng cường cấu hình Cloud WAN cho RISE with SAP:
 
-* Triển khai lớp tường lửa (firewall layer) để bảo vệ lưu lượng giữa RISE with SAP VPCs và các workloads khác được kết nối qua Cloud WAN. Để thực hiện điều này, hãy tạo một [Network Function Group (NFG)](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-policy-service-insertion.html) để sử dụng chức năng service insertion.
+- Triển khai lớp tường lửa (firewall layer) để bảo vệ lưu lượng giữa RISE with SAP VPCs và các workloads khác được kết nối qua Cloud WAN. Để thực hiện điều này, hãy tạo một [Network Function Group (NFG)](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-policy-service-insertion.html) để sử dụng chức năng service insertion.
 
 ```json
 "network-function-groups": [
@@ -220,7 +214,7 @@ Sau khi thiết lập các phân đoạn mạng (network segments), hãy xem xé
 ],
 ```
 
-* Hành động định tuyến service insertion để kiểm tra lưu lượng giữa các phân đoạn được gọi là send-via. Trong ví dụ của chúng ta, tùy chọn dual-hop cho phép kiểm tra lưu lượng xuyên vùng (cross-Region) tại cả hai vùng AWS mà lưu lượng đi qua. Một tùy chọn khác là sử dụng single-hop, cho phép kiểm tra lưu lượng chỉ trong một vùng (bạn cũng có thể chọn vùng AWS nào sẽ được sử dụng). Bạn có thể truy cập [tài liệu AWS](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-policies-json.html#cloudwan-segment-actions-json) để tìm hiểu thêm về cách hoạt động của cơ chế này.
+- Hành động định tuyến service insertion để kiểm tra lưu lượng giữa các phân đoạn được gọi là send-via. Trong ví dụ của chúng ta, tùy chọn dual-hop cho phép kiểm tra lưu lượng xuyên vùng (cross-Region) tại cả hai vùng AWS mà lưu lượng đi qua. Một tùy chọn khác là sử dụng single-hop, cho phép kiểm tra lưu lượng chỉ trong một vùng (bạn cũng có thể chọn vùng AWS nào sẽ được sử dụng). Bạn có thể truy cập [tài liệu AWS](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-policies-json.html#cloudwan-segment-actions-json) để tìm hiểu thêm về cách hoạt động của cơ chế này.
 
 ```json
 "segment-actions": [
@@ -246,8 +240,8 @@ Sau khi thiết lập các phân đoạn mạng (network segments), hãy xem xé
 
 Các attachment mới trong Cloud WAN sẽ tự động được liên kết (associated) với một segment hoặc NFG bằng cách sử dụng [attachment-policies](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-policies-json.html#cloudwan-attach-policies-json) trong policy document. Từ các attachments, bạn có thể lấy metadata (chẳng hạn như tags, attachment type, AWS account, hoặc AWS Region) để xác định các policy chi tiết (granular policies) và chỉ định cách một attachment mới sẽ được gán vào segment trong mạng. Chúng ta có thể tập trung vào rule số 200 như một ví dụ để đi sâu vào khả năng này.
 
-* Đối với RISE with SAP VPCs, khuyến nghị là sử dụng SAP Account ID làm metadata để tự động hóa quá trình liên kết attachment. Trong đoạn mã bên dưới, bạn nên thay thế phần giữ chỗ "XXXXXXXXXXXX" bằng Account ID thực tế.
-* Ngoài ra, hãy sử dụng cờ require acceptance để thêm một lớp kiểm soát thủ công bổ sung khi tạo liên kết (association).
+- Đối với RISE with SAP VPCs, khuyến nghị là sử dụng SAP Account ID làm metadata để tự động hóa quá trình liên kết attachment. Trong đoạn mã bên dưới, bạn nên thay thế phần giữ chỗ "XXXXXXXXXXXX" bằng Account ID thực tế.
+- Ngoài ra, hãy sử dụng cờ require acceptance để thêm một lớp kiểm soát thủ công bổ sung khi tạo liên kết (association).
 
 ```json
 {
@@ -280,29 +274,30 @@ Các attachment mới trong Cloud WAN sẽ tự động được liên kết (as
 
 Khi cấu hình **firewall rules**, hãy xem xét các **port chuyên biệt của RISE with SAP** để cho phép lưu lượng từ các **workloads** của bạn đến **RISE with SAP VPC**. Để biết thêm chi tiết về những **firewall** có thể triển khai, hãy tham khảo bài viết [Securing SAP with AWS Network Firewall part-2 managed rules](https://aws.amazon.com/blogs/awsforsap/securing-sap-with-aws-network-firewall-part-2-managed-rules/).
 
-* **RFC Connections (BAPI and IDoc):** Cổng 33xx (trong đó xx là số instance của bạn)
-* **HTTPS cho OData và REST/SOAP:** Cổng 443, 44300
-* **ODBC/JDBC cho SAP HANA connections:** Cổng 3xx15 (trong đó xx là số instance của bạn)
-* **Một số cổng cần thiết khác:**
-  * 44301–44302: Client và SAP AS connections
-  * 3201–3202: Client và SAP AS connections
-  * 8001–8002: Client và SAP AS connections
-  * 3600: Nếu sử dụng load balancing với message server
-  * 3299: SAProuter service
-  * 3200–3299: SAP Connector
-  * 3300–3399: SAPGUI
+- **RFC Connections (BAPI and IDoc):** Cổng 33xx (trong đó xx là số instance của bạn)
+- **HTTPS cho OData và REST/SOAP:** Cổng 443, 44300
+- **ODBC/JDBC cho SAP HANA connections:** Cổng 3xx15 (trong đó xx là số instance của bạn)
+- **Một số cổng cần thiết khác:**
+  - 44301–44302: Client và SAP AS connections
+  - 3201–3202: Client và SAP AS connections
+  - 8001–8002: Client và SAP AS connections
+  - 3600: Nếu sử dụng load balancing với message server
+  - 3299: SAProuter service
+  - 3200–3299: SAP Connector
+  - 3300–3399: SAPGUI
 
 ### Giám sát và Bảo trì
 
-* Sử dụng AWS Network Manager để giám sát (monitor) và quản lý (manage) Core Network của bạn:
-  * Thiết lập alerts cho các sự cố mạng và vi phạm policy
-  * Cấu hình dashboards để quan sát tình trạng mạng
-  * Kích hoạt logging cho việc xử lý sự cố và đảm bảo tuân thủ (compliance)
+- Sử dụng AWS Network Manager để giám sát (monitor) và quản lý (manage) Core Network của bạn:
 
-* Thực hiện các thủ tục bảo trì định kỳ (regular maintenance procedures) cho:
-  * Kiểm tra định kỳ các firewall rules
-  * Cập nhật cấu hình mạng
-  * Thực hiện thay đổi configuration khi cần thiết
+  - Thiết lập alerts cho các sự cố mạng và vi phạm policy
+  - Cấu hình dashboards để quan sát tình trạng mạng
+  - Kích hoạt logging cho việc xử lý sự cố và đảm bảo tuân thủ (compliance)
+
+- Thực hiện các thủ tục bảo trì định kỳ (regular maintenance procedures) cho:
+  - Kiểm tra định kỳ các firewall rules
+  - Cập nhật cấu hình mạng
+  - Thực hiện thay đổi configuration khi cần thiết
 
 ---
 
@@ -319,15 +314,15 @@ Cấu hình này cho phép chia sẻ mạng an toàn và duy trì kết nối �
 ## Về tác giả
 
 **Pablo Sánchez Carmona**
-
+![alt text](<Streamlining RISE with SAP Connectivity using AWS Cloud WAN- Networking & Content Delivery/images/image2.png>)
 Pablo là Kiến trúc sư Giải pháp Chuyên gia Mạng cấp cao (Senior Network Specialist Solutions Architect) tại AWS, nơi anh hỗ trợ khách hàng thiết kế các hệ thống mạng an toàn, linh hoạt và tiết kiệm chi phí. Khi không nói về mạng (Networking), Pablo thường chơi bóng rổ hoặc trò chơi điện tử. Anh có bằng Thạc sĩ Khoa học ngành Kỹ thuật Điện (MSc in Electrical Engineering) từ Viện Công nghệ Hoàng gia Thụy Điển (KTH) và Thạc sĩ Kỹ thuật Viễn thông (Telecommunications Engineering) từ Đại học Bách khoa Catalonia (UPC).
 
 **Kenny Rajan**
-
+![alt text](<Streamlining RISE with SAP Connectivity using AWS Cloud WAN- Networking & Content Delivery/images/image5.png>)
 Kenny là Kiến trúc sư Doanh nghiệp Cấp cao (Principal Enterprise Architect) tại AWS, chuyên về tích hợp Generative AI với các hệ thống doanh nghiệp và tiếp thị như SAP và Adobe. Anh giúp các tổ chức hiện đại hóa nền tảng trải nghiệm số, chuỗi cung ứng và hệ thống backend thông qua các giải pháp điện toán đám mây dựa trên dữ liệu và AI. Ngoài công việc, Kenny còn đóng góp cho giáo dục công nghệ và các hoạt động thiện nguyện.
 
 **Rozal Singh**
-
+![alt text](<Streamlining RISE with SAP Connectivity using AWS Cloud WAN- Networking & Content Delivery/images/image3.png>)
 Rozal là Kiến trúc sư Giải pháp Cấp cao (Principal Solutions Architect) chuyên về SAP tại AWS. Với hơn 18 năm kinh nghiệm trong lĩnh vực SAP, anh có chuyên môn trong việc hướng dẫn khách hàng trong hành trình chuyển đổi lên đám mây, đặc biệt là trong quá trình di chuyển và tối ưu hóa hệ thống SAP trên AWS. Trong vai trò hiện tại, Rozal hợp tác với các khách hàng doanh nghiệp để phát triển và triển khai các chiến lược đám mây toàn diện, đảm bảo thành công cho các sáng kiến chuyển đổi số đồng thời tối đa hóa hiệu quả đầu tư vào công nghệ AWS và SAP. Sự cam kết với đổi mới và thành công của khách hàng đã giúp anh trở thành cố vấn đáng tin cậy trong lĩnh vực công nghệ doanh nghiệp.
 
 ---
