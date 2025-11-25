@@ -25,9 +25,7 @@ chapter: false
 
 &emsp; **Thời gian thực tập:** Từ ngày 06/09/2025 đến ngày 30/12/2025
 
-<div style="text-align: center; margin: 30px 0;">
-  <img src="4x3.png" alt="Profile Photo" style="max-width: 400px; width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-</div>
+![alt text](4x3.png)
 
 ### Nội dung báo cáo
 
