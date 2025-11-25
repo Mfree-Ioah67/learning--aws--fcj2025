@@ -42,26 +42,66 @@ pre: " <b> 1.6. </b> "
   - Cấu hình Aurora Global Database cho disaster recovery
   - Triển khai Aurora Backtrack cho point-in-time recovery
 
-- **Triển Khai RDS (Lab 05):**
-  - Tạo VPC với public và private subnets
-  - Cấu hình security groups cho EC2 và RDS
-  - Tạo DB subnet group cho Multi-AZ deployment
-  - Khởi chạy RDS MySQL instance với cấu hình phù hợp
-  - Deploy ứng dụng web kết nối với RDS
+- **Cấu Hình VPC (Lab 05-2.1):**
+  - Tạo custom VPC với CIDR block 10.0.0.0/16
+  - Cấu hình public subnet (10.0.1.0/24) cho EC2 web server
+  - Cấu hình private subnets (10.0.2.0/24, 10.0.3.0/24) cho RDS ở các AZ khác nhau
+  - Tạo Internet Gateway và gắn vào VPC
+  - Cấu hình route tables cho public và private subnets
+  - Bật DNS hostnames và DNS resolution cho VPC
+  - Triển khai network isolation cho database tier
+
+- **Cấu Hình Security Groups (Lab 05-2.2 & 2.3):**
+  - Tạo EC2 security group cho phép HTTP (80), HTTPS (443), và SSH (22)
+  - Tạo RDS security group cho phép MySQL (3306) chỉ từ EC2 security group
+  - Triển khai nguyên tắc least privilege cho network access
+  - Cấu hình security group rules cho inbound và outbound traffic
+  - Sử dụng security group references thay vì IP addresses để bảo mật tốt hơn
+
+- **DB Subnet Group (Lab 05-2.4):**
+  - Tạo DB subnet group trải rộng nhiều availability zones
+  - Chọn private subnets ở các AZ khác nhau cho high availability
+  - Đảm bảo cấu hình subnet phù hợp cho Multi-AZ deployment
+  - Xác minh subnet group đáp ứng yêu cầu RDS
+
+- **Triển Khai RDS (Lab 05-3 đến 05-7):**
+  - Khởi chạy EC2 instance trong public subnet với vai trò web server
+  - Khởi chạy RDS MySQL instance trong private subnets với Multi-AZ enabled
+  - Deploy ứng dụng web kết nối với RDS qua private endpoint
   - Kiểm tra automated backup và restore procedures
   - Xác minh hành vi Multi-AZ failover
+  - Thực hành dọn dẹp resources để tránh chi phí không cần thiết
 
-- **Database Migration (Lab 43):**
-  - Kết nối Windows EC2 qua RDP và Fleet Manager
-  - Cấu hình SQL Server và Oracle source databases
-  - Chuẩn bị databases cho migration (dropped constraints)
-  - Sử dụng AWS Schema Conversion Tool (SCT) cho schema migration
-  - Convert MSSQL schemas sang Aurora MySQL format
-  - Convert Oracle schemas sang MySQL format
-  - Tạo DMS replication instances và endpoints
-  - Cấu hình migration tasks cho full load và CDC
-  - Giám sát tiến trình migration và logs
-  - Troubleshoot các vấn đề migration phổ biến
+- **Thiết Lập Database Migration (Lab 43-01 đến 43-06):**
+  - Kết nối Windows EC2 qua RDP Client (Lab 43-01)
+  - Kết nối EC2 sử dụng Fleet Manager cho truy cập qua browser (Lab 43-02)
+  - Cấu hình SQL Server source database settings (Lab 43-03)
+  - Kết nối Oracle source database (Lab 43-04)
+  - Cấu hình Oracle source database cho migration (Lab 43-05)
+  - Drop foreign key constraints để chuẩn bị cho migration (Lab 43-06)
+
+- **Schema Conversion (Lab 43-07 đến 43-10):**
+  - Cấu hình Aurora MySQL làm target database (Lab 43-07)
+  - Tạo AWS SCT project cho MSSQL sang Aurora MySQL (Lab 43-08)
+  - Thực hiện schema conversion từ MSSQL sang MySQL (Lab 43-09)
+  - Thực thi Oracle sang MySQL schema conversion (Lab 43-10)
+  - Phân tích conversion assessment reports
+  - Điều chỉnh thủ công các database objects không tương thích
+
+- **Thực Thi Data Migration (Lab 43-11 đến 43-15):**
+  - Tạo DMS replication instances và endpoints (Lab 43-11)
+  - Kiểm tra S3 buckets cho migration artifacts (Lab 43-12)
+  - Tạo serverless DMS migration tasks (Lab 43-13)
+  - Cấu hình event notifications cho migration status (Lab 43-14)
+  - Giám sát CloudWatch logs cho tiến trình migration (Lab 43-15)
+  - Xác thực tính toàn vẹn dữ liệu sau migration
+
+- **Troubleshooting Migration (Lab 43-16 đến 43-17):**
+  - Kiểm tra memory pressure scenarios trên replication instance (Lab 43-16)
+  - Troubleshoot table-level errors trong migration (Lab 43-17)
+  - Giải quyết các DMS error codes phổ biến
+  - Tối ưu task settings cho hiệu suất tốt hơn
+  - Triển khai retry logic cho failed tasks
 
 - **Data Warehousing & Caching:**
   - Hiểu kiến trúc Redshift cho analytics workloads

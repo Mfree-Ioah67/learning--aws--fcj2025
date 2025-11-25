@@ -42,26 +42,66 @@ pre: " <b> 1.6. </b> "
   - Configured Aurora Global Database for disaster recovery
   - Implemented Aurora Backtrack for point-in-time recovery
 
-- **RDS Deployment (Lab 05):**
-  - Created VPC with public and private subnets
-  - Configured security groups for EC2 and RDS
-  - Created DB subnet group for Multi-AZ deployment
-  - Launched RDS MySQL instance with proper configuration
-  - Deployed web application connecting to RDS
+- **VPC Configuration (Lab 05-2.1):**
+  - Created custom VPC with CIDR block 10.0.0.0/16
+  - Configured public subnet (10.0.1.0/24) for EC2 web server
+  - Configured private subnets (10.0.2.0/24, 10.0.3.0/24) for RDS in different AZs
+  - Created Internet Gateway and attached to VPC
+  - Configured route tables for public and private subnets
+  - Enabled DNS hostnames and DNS resolution for VPC
+  - Implemented network isolation for database tier
+
+- **Security Groups Configuration (Lab 05-2.2 & 2.3):**
+  - Created EC2 security group allowing HTTP (80), HTTPS (443), and SSH (22)
+  - Created RDS security group allowing MySQL (3306) only from EC2 security group
+  - Implemented principle of least privilege for network access
+  - Configured security group rules for inbound and outbound traffic
+  - Used security group references instead of IP addresses for better security
+
+- **DB Subnet Group (Lab 05-2.4):**
+  - Created DB subnet group spanning multiple availability zones
+  - Selected private subnets in different AZs for high availability
+  - Ensured proper subnet configuration for Multi-AZ deployment
+  - Verified subnet group meets RDS requirements
+
+- **RDS Deployment (Lab 05-3 to 05-7):**
+  - Launched EC2 instance in public subnet with web server role
+  - Launched RDS MySQL instance in private subnets with Multi-AZ enabled
+  - Deployed web application connecting to RDS via private endpoint
   - Tested automated backup and restore procedures
   - Verified Multi-AZ failover behavior
+  - Practiced clean up of resources to avoid unnecessary costs
 
-- **Database Migration (Lab 43):**
-  - Connected to Windows EC2 via RDP and Fleet Manager
-  - Configured SQL Server and Oracle source databases
-  - Prepared databases for migration (dropped constraints)
-  - Used AWS Schema Conversion Tool (SCT) for schema migration
-  - Converted MSSQL schemas to Aurora MySQL format
-  - Converted Oracle schemas to MySQL format
-  - Created DMS replication instances and endpoints
-  - Configured migration tasks for full load and CDC
-  - Monitored migration progress and logs
-  - Troubleshot common migration issues
+- **Database Migration Setup (Lab 43-01 to 43-06):**
+  - Connected to Windows EC2 via RDP Client (Lab 43-01)
+  - Connected to EC2 using Fleet Manager for browser-based access (Lab 43-02)
+  - Configured SQL Server source database settings (Lab 43-03)
+  - Connected to Oracle source database (Lab 43-04)
+  - Configured Oracle source database for migration (Lab 43-05)
+  - Dropped foreign key constraints to prepare for migration (Lab 43-06)
+
+- **Schema Conversion (Lab 43-07 to 43-10):**
+  - Configured Aurora MySQL as target database (Lab 43-07)
+  - Created AWS SCT project for MSSQL to Aurora MySQL (Lab 43-08)
+  - Performed schema conversion from MSSQL to MySQL (Lab 43-09)
+  - Executed Oracle to MySQL schema conversion (Lab 43-10)
+  - Analyzed conversion assessment reports
+  - Manually adjusted incompatible database objects
+
+- **Data Migration Execution (Lab 43-11 to 43-15):**
+  - Created DMS replication instances and endpoints (Lab 43-11)
+  - Inspected S3 buckets for migration artifacts (Lab 43-12)
+  - Created serverless DMS migration tasks (Lab 43-13)
+  - Configured event notifications for migration status (Lab 43-14)
+  - Monitored CloudWatch logs for migration progress (Lab 43-15)
+  - Validated data integrity after migration
+
+- **Migration Troubleshooting (Lab 43-16 to 43-17):**
+  - Tested memory pressure scenarios on replication instance (Lab 43-16)
+  - Troubleshot table-level errors during migration (Lab 43-17)
+  - Resolved common DMS error codes
+  - Optimized task settings for better performance
+  - Implemented retry logic for failed tasks
 
 - **Data Warehousing & Caching:**
   - Understood Redshift architecture for analytics workloads
