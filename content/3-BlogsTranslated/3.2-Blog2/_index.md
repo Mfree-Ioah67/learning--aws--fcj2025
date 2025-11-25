@@ -45,19 +45,19 @@ _Figure 1. Overall Multi-Region and multi-account AWS Cloud WAN architecture con
 
 The following steps outline the integration process for your AWS network (using Cloud WAN) with RISE with SAP. In this section, we focus on identifying the configuration steps of the integration process.
 
-* You need to create a Global Network and Core Network with a policy document that defines your network structure: AWS Regions, segments, routing actions, and attachment policies. Check the [AWS documentation](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-policies-json.html) for more details about this setup.  
+- You need to create a Global Network and Core Network with a policy document that defines your network structure: AWS Regions, segments, routing actions, and attachment policies. Check the [AWS documentation](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-policies-json.html) for more details about this setup.  
    We recommend using a dedicated segment specifically for RISE with SAP VPC connections. Minimal separation in Cloud WAN configuration — with VPCs connected to a separate segment — allows better control of routing configuration (adding inspection layers, creating static routes or blackholes, etc.).
 
-* To follow best practices in including an inspection layer, you should deploy an Inspection VPC using Network Firewall or GWLB along with third-party security appliances. Additionally, your policy document needs to insert this firewall between your workloads and RISE with SAP VPCs.
+- To follow best practices in including an inspection layer, you should deploy an Inspection VPC using Network Firewall or GWLB along with third-party security appliances. Additionally, your policy document needs to insert this firewall between your workloads and RISE with SAP VPCs.
 
-* Share the Core Network with the RISE with SAP account using [AWS Resource Access Manager](https://aws.amazon.com/ram/) (AWS RAM). Check the documentation to understand how you can share resources through AWS RAM.  
+- Share the Core Network with the RISE with SAP account using [AWS Resource Access Manager](https://aws.amazon.com/ram/) (AWS RAM). Check the documentation to understand how you can share resources through AWS RAM.  
    The Core Network is a global resource, so sharing must be done from the N. Virginia Region (us-east-1).
 
-* Work with the RISE with SAP team to accept the shared Core Network invitation. The RISE with SAP team needs to perform the following actions:
+- Work with the RISE with SAP team to accept the shared Core Network invitation. The RISE with SAP team needs to perform the following actions:
 
-  * Accept the shared Core Network invitation.
-  * Configure VPC attachments to connect with the shared Core Network.
-  * Add necessary private network routes in the subnet route table to ensure seamless bidirectional communication.
+  - Accept the shared Core Network invitation.
+  - Configure VPC attachments to connect with the shared Core Network.
+  - Add necessary private network routes in the subnet route table to ensure seamless bidirectional communication.
 
 This setup allows secure network sharing and ensures connectivity between the user's AWS account environment and the RISE with SAP environment. Considerations include avoiding overlapping CIDR blocks, monitoring data transfer costs, regularly reviewing firewall rules, and using [AWS CloudTrail](https://aws.amazon.com/cloudtrail/) for audit purposes.
 
@@ -78,9 +78,7 @@ _Figure 2. Example AWS Cloud WAN architecture with an inspection layer between A
   "version": "2021.12",
   "core-network-configuration": {
     "vpn-ecmp-support": true,
-    "asn-ranges": [
-      "64496-64500"
-    ],
+    "asn-ranges": ["64496-64500"],
     "edge-locations": [
       {
         "location": "us-east-1",
@@ -115,14 +113,10 @@ _Figure 2. Example AWS Cloud WAN architecture with an inspection layer between A
       "segment": "vpcs",
       "mode": "dual-hop",
       "when-sent-to": {
-        "segments": [
-          "saprise"
-        ]
+        "segments": ["saprise"]
       },
       "via": {
-        "network-function-groups": [
-          "inspectionVpcs"
-        ]
+        "network-function-groups": ["inspectionVpcs"]
       }
     }
   ],
@@ -209,7 +203,7 @@ We recommend using a separate segment dedicated to RISE with SAP VPCs. This appr
 
 After setting up network segments, consider the following recommendations to enhance Cloud WAN configuration for RISE with SAP:
 
-* Deploy a firewall layer to protect traffic between RISE with SAP VPCs and other workloads connected via Cloud WAN. To do this, create a [Network Function Group (NFG)](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-policy-service-insertion.html) to use the service insertion functionality.
+- Deploy a firewall layer to protect traffic between RISE with SAP VPCs and other workloads connected via Cloud WAN. To do this, create a [Network Function Group (NFG)](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-policy-service-insertion.html) to use the service insertion functionality.
 
 ```json
 "network-function-groups": [
@@ -220,7 +214,7 @@ After setting up network segments, consider the following recommendations to enh
 ],
 ```
 
-* The service insertion routing action to inspect traffic between segments is called send-via. In our example, the dual-hop option allows cross-Region traffic inspection at both AWS regions that traffic passes through. Another option is to use single-hop, which allows traffic inspection in only one region (you can also choose which AWS region to use). You can access the [AWS documentation](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-policies-json.html#cloudwan-segment-actions-json) to learn more about how this mechanism works.
+- The service insertion routing action to inspect traffic between segments is called send-via. In our example, the dual-hop option allows cross-Region traffic inspection at both AWS regions that traffic passes through. Another option is to use single-hop, which allows traffic inspection in only one region (you can also choose which AWS region to use). You can access the [AWS documentation](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-policies-json.html#cloudwan-segment-actions-json) to learn more about how this mechanism works.
 
 ```json
 "segment-actions": [
@@ -246,8 +240,8 @@ After setting up network segments, consider the following recommendations to enh
 
 New attachments in Cloud WAN will automatically be associated with a segment or NFG by using [attachment-policies](https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-policies-json.html#cloudwan-attach-policies-json) in the policy document. From attachments, you can retrieve metadata (such as tags, attachment type, AWS account, or AWS Region) to define granular policies and specify how a new attachment will be assigned to a segment in the network. We can focus on rule number 200 as an example to delve into this capability.
 
-* For RISE with SAP VPCs, the recommendation is to use the SAP Account ID as metadata to automate the attachment association process. In the code snippet below, you should replace the placeholder "XXXXXXXXXXXX" with the actual Account ID.
-* Additionally, use the require acceptance flag to add an additional manual control layer when creating associations.
+- For RISE with SAP VPCs, the recommendation is to use the SAP Account ID as metadata to automate the attachment association process. In the code snippet below, you should replace the placeholder "XXXXXXXXXXXX" with the actual Account ID.
+- Additionally, use the require acceptance flag to add an additional manual control layer when creating associations.
 
 ```json
 {
@@ -280,29 +274,30 @@ New attachments in Cloud WAN will automatically be associated with a segment or 
 
 When configuring **firewall rules**, consider the **specialized ports for RISE with SAP** to allow traffic from your **workloads** to the **RISE with SAP VPC**. For more details about deployable **firewalls**, refer to the post [Securing SAP with AWS Network Firewall part-2 managed rules](https://aws.amazon.com/blogs/awsforsap/securing-sap-with-aws-network-firewall-part-2-managed-rules/).
 
-* **RFC Connections (BAPI and IDoc):** Port 33xx (where xx is your instance number)
-* **HTTPS for OData and REST/SOAP:** Ports 443, 44300
-* **ODBC/JDBC for SAP HANA connections:** Port 3xx15 (where xx is your instance number)
-* **Other necessary ports:**
-  * 44301–44302: Client and SAP AS connections
-  * 3201–3202: Client and SAP AS connections
-  * 8001–8002: Client and SAP AS connections
-  * 3600: If using load balancing with message server
-  * 3299: SAProuter service
-  * 3200–3299: SAP Connector
-  * 3300–3399: SAPGUI
+- **RFC Connections (BAPI and IDoc):** Port 33xx (where xx is your instance number)
+- **HTTPS for OData and REST/SOAP:** Ports 443, 44300
+- **ODBC/JDBC for SAP HANA connections:** Port 3xx15 (where xx is your instance number)
+- **Other necessary ports:**
+  - 44301–44302: Client and SAP AS connections
+  - 3201–3202: Client and SAP AS connections
+  - 8001–8002: Client and SAP AS connections
+  - 3600: If using load balancing with message server
+  - 3299: SAProuter service
+  - 3200–3299: SAP Connector
+  - 3300–3399: SAPGUI
 
 ### Monitoring and Maintenance
 
-* Use AWS Network Manager to monitor and manage your Core Network:
-  * Set up alerts for network issues and policy violations
-  * Configure dashboards to observe network status
-  * Enable logging for troubleshooting and ensuring compliance
+- Use AWS Network Manager to monitor and manage your Core Network:
 
-* Implement regular maintenance procedures for:
-  * Regularly reviewing firewall rules
-  * Updating network configuration
-  * Making configuration changes when necessary
+  - Set up alerts for network issues and policy violations
+  - Configure dashboards to observe network status
+  - Enable logging for troubleshooting and ensuring compliance
+
+- Implement regular maintenance procedures for:
+  - Regularly reviewing firewall rules
+  - Updating network configuration
+  - Making configuration changes when necessary
 
 ---
 
