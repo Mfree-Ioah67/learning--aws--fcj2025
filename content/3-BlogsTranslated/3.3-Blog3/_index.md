@@ -20,7 +20,7 @@ Following the 'Anticipate Failure' design principle from the Well-Architected Fr
 
 A resilient Direct Connect infrastructure creates the foundation for highly available hybrid connectivity. Before diving into overlay tunnel optimization, readers should familiarize themselves with the Direct Connect Resiliency Toolkit and understand Active/Active and Active/Passive configurations. This post uses the Direct Connect High Resiliency: Multi-Site non Redundant Deployment model as a reference architecture to illustrate these optimization techniques, as shown in the figure below.
 
-![alt text](image6.png)
+![alt text](images/image6.png)
 
 _Figure 1: Direct Connect with High Resiliency Model_
 
@@ -114,7 +114,7 @@ Direct Connect acts as an underlay connection for users deploying overlay tunnel
 
 In this configuration, the user-side tunnel outside IP addresses are routed exclusively through a specific Direct Connect VIF. This typically occurs when users use the Direct Connect VIF interface IP address as the tunnel outside IP address.
 
-![alt text](image2.png)
+![alt text](images/image2.png)
 
 _Figure 2: Interface pinned overlay tunnels over Direct Connect_
 
@@ -164,7 +164,7 @@ Pinning tunnels to a specific connection has important implications for failover
 
 In this configuration, tunnel outside IP addresses originate from logical interfaces (such as loopbacks) configured on user routers. Both the AWS tunnel endpoint IP (Transit Gateway CIDR) and user router loopback IP addresses are reachable through all available Direct Connect VIFs.
 
-![alt text](image4.png)
+![alt text](images/image4.png)
 
 _Figure 3: Unpinned overlay tunnels over Direct Connect_
 
@@ -223,7 +223,7 @@ Transit Gateway Connect uses different BGP timers than Direct Connect VIFs:
 * Hold timer: 30 seconds
 
 ### Failover Time Comparison
-![alt text](image3.png)
+![alt text](images/image3.png)
 As shown in the comparison table, while both pinned and unpinned configurations can achieve sub-second failover times with BFD, the implementation complexity differs significantly.
 
 ---
@@ -275,11 +275,11 @@ For users deploying overlay tunnels over Direct Connect, we recommend using unpi
 ## About the Authors
 
 **Azeem Ayaz**
-![alt text](image1.png)
+![alt text](images/image1.png)
 Azeem is a Sr Network Specialist TAM at AWS Enterprise Support, specializing in supporting strategic enterprise customers and their complex cloud networking needs. With 13 years of experience in designing and operating network and security infrastructure, he focuses on building scalable architectures that help businesses optimize their cloud investments and achieve measurable business outcomes. Before joining AWS, Azeem developed his expertise at leading corporations including Vodafone, Cisco, and Juniper. When not busy designing cloud solutions, he enjoys playing strategy games and exploring new destinations with his partner.
 
 **Pavlos Kaimakis**
-![alt text](image5.png)
+![alt text](images/image5.png)
 Pavlos is a Senior Solutions Architect at AWS, where he helps customers design and deploy mission-critical enterprise solutions. With extensive experience in product development and customer support, he focuses on building scalable architectures that deliver real business value. Outside of work, Pavlos is an avid traveler who enjoys exploring new lands and cultures.
 
 ---

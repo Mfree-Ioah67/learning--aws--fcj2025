@@ -20,7 +20,7 @@ Theo nguyên tắc thiết kế 'Anticipate Failure' từ Well-Architected Frame
 
 Một hạ tầng Direct Connect bền vững tạo nền tảng cho highly available hybrid connectivity. Trước khi đi sâu vào overlay tunnel optimization, người đọc nên làm quen với Direct Connect Resiliency Toolkit và hiểu về Active/Active and Active/Passive configurations. Bài viết này sử dụng Direct Connect High Resiliency: Multi-Site non Redundant Deployment model như một kiến trúc tham chiếu để minh họa các kỹ thuật tối ưu hóa này, như thể hiện trong hình dưới đây.
 
-![alt text](image6.png)
+![alt text](images/image6.png)
 
 _Hình 1: Kết nối trực tiếp với mô hình có khả năng phục hồi cao_
 
@@ -114,7 +114,7 @@ Direct Connect hoạt động như một kết nối underlay cho những ngư�
 
 Trong cấu hình này, các địa chỉ IP outside của tunnel phía người dùng được định tuyến độc quyền qua một Direct Connect VIF cụ thể. Điều này thường xảy ra khi người dùng sử dụng địa chỉ IP interface Direct Connect VIF làm địa chỉ IP outside tunnel.
 
-![alt text](image2.png)
+![alt text](images/image2.png)
 
 _Hình 2: Interface pinned overlay tunnels trên Direct Connect_
 
@@ -164,7 +164,7 @@ Việc "pinning" (gắn chặt) của tunnel vào một kết nối cụ thể c
 
 Trong cấu hình này, các địa chỉ IP bên ngoài của tunnel bắt nguồn từ các interface logic (chẳng hạn như loopbacks) được cấu hình trên user routers. Cả AWS tunnel endpoint IP (Transit Gateway CIDR) và các địa chỉ IP loopback của user router đều có thể truy cập thông qua tất cả các Direct Connect VIFs có sẵn.
 
-![alt text](image4.png)
+![alt text](images/image4.png)
 
 _Hình 3: Unpinned overlay tunnels trên Direct Connect_
 
@@ -225,7 +225,7 @@ Transit Gateway Connect sử dụng các BGP timer khác với Direct Connect VI
 
 ### So sánh thời gian Failover
 
-![alt text](image3.png)
+![alt text](images/image3.png)
 
 Như được thể hiện trong bảng so sánh ở trên, mặc dù cả cấu hình pinned và unpinned đều có thể đạt thời gian failover dưới một giây với BFD, nhưng mức độ phức tạp khi triển khai lại khác nhau đáng kể.
 
@@ -279,13 +279,13 @@ Bài viết này minh họa cách tối ưu hóa thời gian failover cho các o
 
 **Azeem Ayaz**
 
-![alt text](image1.png)
+![alt text](images/image1.png)
 
 Azeem là Chuyên gia Mạng cấp cao (Sr Network Specialist TAM) tại AWS Enterprise Support, chuyên hỗ trợ các khách hàng doanh nghiệp chiến lược và nhu cầu mạng đám mây phức tạp của họ. Với 13 năm kinh nghiệm trong việc thiết kế và vận hành hạ tầng mạng và bảo mật, anh tập trung vào việc xây dựng kiến trúc có khả năng mở rộng, giúp doanh nghiệp tối ưu hóa đầu tư vào đám mây và đạt được hiệu quả kinh doanh có thể đo lường. Trước khi gia nhập AWS, Azeem đã phát triển chuyên môn của mình tại các tập đoàn hàng đầu như Vodafone, Cisco và Juniper. Khi không bận rộn với việc thiết kế giải pháp đám mây, anh thường chơi các trò chiến thuật và khám phá những điểm đến mới cùng bạn đời của mình.
 
 **Pavlos Kaimakis**
 
-![alt text](image5.png)
+![alt text](images/image5.png)
 
 Pavlos là Kiến trúc sư Giải pháp cấp cao (Senior Solutions Architect) tại AWS, nơi anh hỗ trợ khách hàng thiết kế và triển khai các giải pháp quan trọng cho doanh nghiệp. Với kinh nghiệm sâu rộng trong phát triển sản phẩm và hỗ trợ khách hàng, anh tập trung vào việc xây dựng các kiến trúc có khả năng mở rộng nhằm mang lại giá trị kinh doanh thực tiễn. Ngoài công việc, Pavlos là một người đam mê du lịch, thích khám phá những vùng đất và nền văn hóa mới.
 
