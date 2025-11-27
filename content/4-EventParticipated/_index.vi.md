@@ -1,5 +1,5 @@
 ﻿---
-title: "Các events đã tham gia"
+title: "Các Sự Kiện Đã Tham Gia"
 date: 2025-09-10
 weight: 4
 chapter: false
@@ -7,41 +7,52 @@ pre: " <b> 4. </b> "
 ---
 
 {{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
+⚠️ **Lưu ý:** Thông tin dưới đây chỉ mang tính chất tham khảo. Vui lòng **không sao chép nguyên văn** vào báo cáo của bạn, bao gồm cả cảnh báo này.
 {{% /notice %}}
 
-> Trong phần này, các bạn cần liệt kê và mô tả chi tiết các sự kiện (event) mà mình đã tham gia trong suốt quá trình thực tập hoặc làm việc. 
+> Trong phần này, bạn nên liệt kê và mô tả chi tiết các sự kiện mà bạn đã tham gia trong quá trình thực tập hoặc làm việc.  
 > 
-> Mỗi sự kiện nên được trình bày theo định dạng Event 1, Event 2, Event 3…, kèm theo các thông tin:
+> Mỗi sự kiện nên được trình bày theo định dạng Sự kiện 1, Sự kiện 2, Sự kiện 3…, cùng với các thông tin sau:
 > * Tên sự kiện
-> * Thời gian tổ chức
+> * Ngày giờ
 > * Địa điểm (nếu có)
-> * Vai trò của bạn trong sự kiện (người tham dự, hỗ trợ tổ chức, diễn giả, v.v.)
-> * Mô tả ngắn gọn nội dung và hoạt động chính trong sự kiện
-> * Kết quả hoặc giá trị đạt được (bài học, kỹ năng mới, đóng góp cho nhóm/dự án)
-> * Việc liệt kê này giúp thể hiện rõ sự tham gia thực tế của bạn, cũng như các kỹ năng mềm và kinh nghiệm bạn đã tích lũy qua từng sự kiện.
+> * Vai trò của bạn trong sự kiện (người tham dự, hỗ trợ sự kiện, diễn giả, v.v.)
+> * Mô tả ngắn gọn về nội dung và các hoạt động chính của sự kiện
+> * Kết quả hoặc giá trị thu được (bài học, kỹ năng mới, đóng góp cho nhóm/dự án)
+> * Việc liệt kê này giúp chứng minh sự tham gia thực tế của bạn cũng như các kỹ năng mềm và kinh nghiệm bạn đã có được từ mỗi sự kiện.
 
+Trong quá trình thực tập, mình đã tham gia bốn sự kiện AWS. Mỗi sự kiện đều là một trải nghiệm đáng nhớ, cung cấp kiến thức quý giá về công nghệ đám mây, các thực hành tốt nhất và ứng dụng thực tế, cùng với cơ hội giao lưu và những khoảnh khắc tuyệt vời với cộng đồng AWS.
 
-Trong quá trình thực tập, em đã tham gia 2 events, với mỗi event là một trải nghiệm đáng nhớ với những kiến thức mới, hay và bổ ích, cùng với đó là nhứng món quà và những khoảnh khắc rất tuyệt vời.
+### [Sự kiện 1: AWS FCJ Community KICK-OFF](4.1-Event1/)  
+&emsp;**Tên Sự Kiện:** AWS FCJ Community KICK-OFF  
+&emsp;**Ngày & Giờ:** 2:00 chiều, Thứ Bảy, ngày 7 tháng 9 năm 2025  
+&emsp;**Địa Điểm:** AWS Event Hall, L26 Tòa nhà Bitexco, TP. Hồ Chí Minh  
+&emsp;**Vai Trò:** Người tham dự  
+&emsp;**Mô Tả:** Giới thiệu về Cộng đồng AWS FCJ, giao lưu với các chuyên gia AWS và alumni, học hỏi về con đường sự nghiệp cloud và kiến trúc hệ thống hiện đại.
 
-### [Event 1](4.1-Event1/)
-&emsp;**Tên sự kiện:** GenAI-powered App-DB Modernization workshop
+---
 
-&emsp;**Thời gian:** 09:00 ngày 13/08/2025
+### [Sự kiện 2: Chu Trình Phát Triển Phần Mềm Dựa Trên AI](4.2-Event2/)  
+&emsp;**Tên Sự Kiện:** Chu Trình Phát Triển Phần Mềm Dựa Trên AI: Tái Tưởng Tượng Kỹ Thuật Phần Mềm  
+&emsp;**Ngày & Giờ:** 2:00 chiều, Thứ Sáu, ngày 3 tháng 10 năm 2025  
+&emsp;**Địa Điểm:** AWS Event Hall, L26 Tòa nhà Bitexco, TP. Hồ Chí Minh  
+&emsp;**Vai Trò:** Người tham dự  
+&emsp;**Mô Tả:** Khám phá cách AI tạo sinh biến đổi chu trình phát triển phần mềm với Amazon Q Developer và Kiro, từ kiến trúc đến triển khai và bảo trì.
 
-&emsp;**Địa điểm:** Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, phường Sài Gòn, thành phố Hồ Chí Minh
+---
 
-&emsp;**Vai trò trong sự kiện:** Người tham dự 
+### [Sự kiện 3: Workshop AI/ML/GenAI trên AWS](4.3-Event3/)  
+&emsp;**Tên Sự Kiện:** Workshop AI/ML/GenAI trên AWS  
+&emsp;**Ngày & Giờ:** 8:30 sáng – 5:00 chiều, Thứ Hai, ngày 28 tháng 10 năm 2025  
+&emsp;**Địa Điểm:** Văn phòng AWS Việt Nam  
+&emsp;**Vai Trò:** Người tham dự  
+&emsp;**Mô Tả:** Workshop thực hành cả ngày về Amazon SageMaker cho machine learning, Amazon Bedrock cho generative AI, và các trình diễn thực tế về xây dựng ứng dụng AI/ML trên AWS.
 
+---
 
-
-### [Event 2](4.2-Event2/)
-&emsp;**Tên sự kiện:** GenAI-powered App-DB Modernization workshop
-
-&emsp;**Thời gian:** 09:00 ngày 13/08/2025
-
-&emsp;**Địa điểm:** Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, phường Sài Gòn, thành phố Hồ Chí Minh
-
-&emsp;**Vai trò trong sự kiện:** Người tham dự 
-
-
+### [Sự kiện 4: Workshop DevOps trên AWS](4.4-Event4/)  
+&emsp;**Tên Sự Kiện:** Workshop DevOps trên AWS  
+&emsp;**Ngày & Giờ:** 8:30 sáng – 5:00 chiều, Thứ Hai, ngày 17 tháng 11 năm 2025  
+&emsp;**Địa Điểm:** Văn phòng AWS Việt Nam  
+&emsp;**Vai Trò:** Người tham dự  
+&emsp;**Mô Tả:** Workshop toàn diện cả ngày về các thực hành DevOps bao gồm CI/CD pipelines, Infrastructure as Code với CloudFormation và CDK, các dịch vụ container (ECS, EKS, App Runner), và giám sát với CloudWatch và X-Ray.
