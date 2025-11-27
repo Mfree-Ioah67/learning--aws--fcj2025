@@ -177,23 +177,36 @@ Attending the **"KICK-OFF AWS FIRST CLOUD JOURNEY WORKFORCE OJT FALL 2025"** was
 - Understood the **value** of investing time in learning AWS technologies
 - Developed **confidence** that with dedication, I can achieve similar success
 
-#### Some event photos
+#### Event Pictures
 
-<a href="#"><img src="1.jpg" alt="Ảnh sự kiện 1" width="600"/></a>
+![KICK-OFF Event](images/1.jpg)
 
-<hr>
-<a href="#"><img src="2.jpg" alt="Ảnh sự kiện 2" width="600"/></a>
-<hr>
-<a href="#"><img src="3.jpg" alt="Ảnh sự kiện 3" width="600"/></a>
-<hr>
-<a href="#"><img src="4.jpg" alt="Ảnh sự kiện 4" width="600"/></a>
-<hr>
-<a href="#"><img src="5.jpg" alt="Ảnh sự kiện 5" width="600"/></a>
-<hr>
-<a href="#"><img src="6.jpg" alt="Ảnh sự kiện 6" width="600"/></a>
-<hr>
-<a href="#"><img src="7.jpg" alt="Ảnh sự kiện 7" width="600"/></a>
-<hr>
-<a href="#"><img src="8.jpg" alt="Ảnh sự kiện 8" width="600"/></a>
+---
+
+![KICK-OFF Event](images/2.jpg)
+
+---
+
+![KICK-OFF Event](images/3.jpg)
+
+---
+
+![KICK-OFF Event](images/4.jpg)
+
+---
+
+![KICK-OFF Event](images/5.jpg)
+
+---
+
+![KICK-OFF Event](images/6.jpg)
+
+---
+
+![KICK-OFF Event](images/7.jpg)
+
+---
+
+![KICK-OFF Event](images/8.jpg)
 
 > Overall, the KICK-OFF event was an inspiring experience that gave me a strong boost of motivation to confidently step onto the career path in the tech industry. The insights from experts and alumni offered a new vision, helping me better understand how to build modern systems and work efficiently in a professional environment. I look forward to applying these learnings in my studies and future projects.

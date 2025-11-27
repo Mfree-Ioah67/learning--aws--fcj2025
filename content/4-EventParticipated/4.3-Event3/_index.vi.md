@@ -238,76 +238,146 @@ Tham dự **"Workshop AI/ML/GenAI trên AWS"** tại văn phòng AWS Vietnam là
 
 #### Một Số Hình Ảnh Sự Kiện
 
-![Lâm Tuấn Kiệt trình bày về Amazon SageMaker](z7226089182052_a87c70d3e5127727e468ec919746aa14.jpg)
+![Workshop AI/ML](images/1.jpg)
 
-![Lâm Tuấn Kiệt giới thiệu ML Services](z7226089182835_fd058a0d2646ba5ff862659b2a851ae3.jpg)
+---
 
-![Lâm Tuấn Kiệt demo SageMaker Studio](z7226089185538_6584042d4867f420dcdf26fbcd02f0d1.jpg)
+![Workshop AI/ML](images/2.jpg)
 
-![Lâm Tuấn Kiệt hướng dẫn MLOps](z7226089188785_2f1d4536d4d2edb5bd8521822269e0d7.jpg)
+---
 
-![Đinh Lê Hoàng Anh trình bày về Amazon Bedrock](z7226089195549_6134c1712f06d5fb6b0548a7a64e9750.jpg)
+![Workshop AI/ML](images/3.jpg)
 
-![Đinh Lê Hoàng Anh giới thiệu Foundation Models](z7226089198697_2575442063921150c411a74a9edc32fc.jpg)
+---
 
-![Đinh Lê Hoàng Anh demo Prompt Engineering](z7226089200374_4b9ccc01a946fe9ed479a97f20ad5505.jpg)
+![Workshop AI/ML](images/4.jpg)
 
-![Đinh Lê Hoàng Anh hướng dẫn RAG Architecture](z7226089200375_950fb4714f844f7be177194a7e37a3a7.jpg)
+---
 
-![Danh Hoàng Hiếu Nghị trình diễn Bedrock Agents](z7226089203525_3469cd3ec7d62c0017a5263da64eff32.jpg)
+![Workshop AI/ML](images/5.jpg)
 
-![Danh Hoàng Hiếu Nghị demo Guardrails](z7226089204044_8ce2e2975e24f9819d49e65be4db11c5.jpg)
+---
 
-![Danh Hoàng Hiếu Nghị xây dựng GenAI Chatbot](z7226089206129_2c222262ed586da5b52d7b6030a4c290.jpg)
+![Workshop AI/ML](images/6.jpg)
 
-![Danh Hoàng Hiếu Nghị hướng dẫn thực hành](z7226089216695_6b73693cec27aa10336add1ef9a03555.jpg)
+---
 
-![Tham gia và giao lưu](z7226089218316_67802975e0cb2fd27eca5753c983b534.jpg)
+![Workshop AI/ML](images/7.jpg)
 
-![Thảo luận nhóm](z7226089218462_0e1235918301fc52b7c887a7ea1096f0.jpg)
+---
 
-![Networking session](z7226089346755_df5c575289ae1e889d41530a7fa23152.jpg)
+![Workshop AI/ML](images/8.jpg)
 
-![Q&A với speakers](z7226089354417_4443e34ead3ca15caf40177f0f9f49fc.jpg)
+---
 
-![Thực hành hands-on](z7226089356840_d7bda4bcca7392f3f9556ae7e7caa637ef.jpg)
+![Workshop AI/ML](images/9.jpg)
 
-![Không khí workshop](z7226089356841_3c998c403886d96d8baf709f4dd4e5b6.jpg)
+---
 
-![Hình ảnh sự kiện](z7226089359526_87729a069d3be3043972c2c282e0becf.jpg)
+![Workshop AI/ML](images/10.jpg)
 
-![Hình ảnh sự kiện](z7226089360189_8d1b4512bf90f8903f0734fe096ecb90.jpg)
+---
 
-![Hình ảnh sự kiện](z7226089363728_27d9d0b068a8848a7a785090e98a754b.jpg)
+![Workshop AI/ML](images/11.jpg)
 
-![Hình ảnh sự kiện](z7226089363826_ba00915e1e271ea506cf280d71ae827d.jpg)
+---
 
-![Hình ảnh sự kiện](z7226089366343_1c4a98050cab1358bc27dab7a80a30f1.jpg)
+![Workshop AI/ML](images/12.jpg)
 
-![Hình ảnh sự kiện](z7226089372751_ee454114f82defa27d40fe7e7aa52754.jpg)
+---
 
-![Hình ảnh sự kiện](z7226089376197_63dd66304899769457969cade64e530e.jpg)
+![Workshop AI/ML](images/13.jpg)
 
-![Hình ảnh sự kiện](z7226089380342_06bc2cb44d6cb83846a4e7c1439da961.jpg)
+---
 
-![Hình ảnh sự kiện](z7226089383771_75be752db48944cbb444abe055a5371f.jpg)
+![Workshop AI/ML](images/14.jpg)
 
-![Hình ảnh sự kiện](z7226089385022_19d8d1f46dfd4a6d96f3df63cf28a66b.jpg)
+---
 
-![Hình ảnh sự kiện](z7226089387809_43295d0a2232a6f931293789e9b67e92.jpg)
+![Workshop AI/ML](images/15.jpg)
 
-![Hình ảnh sự kiện](z7226089394453_f5dfbd223cf4d77fb7d75a8219d136b3.jpg)
+---
 
-![Hình ảnh sự kiện](z7226089394608_8ddbe6d08a035fa4f121c1d0ebce372e.jpg)
+![Workshop AI/ML](images/16.jpg)
 
-![Hình ảnh sự kiện](z7226089400963_b53f90b1d0b891779316d6b8123d0637.jpg)
+---
 
-![Hình ảnh sự kiện](z7226089401010_47235c5b5898dbe77edd8d9294b8dac8.jpg)
+![Workshop AI/ML](images/17.jpg)
 
-![Hình ảnh sự kiện](z7226089406027_4e19736efe7e840ce9e3412d682d06a7.jpg)
+---
 
-![Hình ảnh sự kiện](z7226089411924_8f2a33fdef076d4a9ac07e59ae723840.jpg)
+![Workshop AI/ML](images/18.jpg)
 
-![Hình ảnh sự kiện](z7226089412672_0d8e8c7c237589eda3e2b20edffa4dd7.jpg)
+---
+
+![Workshop AI/ML](images/19.jpg)
+
+---
+
+![Workshop AI/ML](images/20.jpg)
+
+---
+
+![Workshop AI/ML](images/21.jpg)
+
+---
+
+![Workshop AI/ML](images/22.jpg)
+
+---
+
+![Workshop AI/ML](images/23.jpg)
+
+---
+
+![Workshop AI/ML](images/24.jpg)
+
+---
+
+![Workshop AI/ML](images/25.jpg)
+
+---
+
+![Workshop AI/ML](images/26.jpg)
+
+---
+
+![Workshop AI/ML](images/27.jpg)
+
+---
+
+![Workshop AI/ML](images/28.jpg)
+
+---
+
+![Workshop AI/ML](images/29.jpg)
+
+---
+
+![Workshop AI/ML](images/30.jpg)
+
+---
+
+![Workshop AI/ML](images/31.jpg)
+
+---
+
+![Workshop AI/ML](images/32.jpg)
+
+---
+
+![Workshop AI/ML](images/33.jpg)
+
+---
+
+![Workshop AI/ML](images/34.jpg)
+
+---
+
+![Workshop AI/ML](images/35.jpg)
+
+---
+
+![Workshop AI/ML](images/36.jpg)
 
 > Nhìn chung, workshop này cung cấp giới thiệu toàn diện về dịch vụ AWS AI/ML, từ machine learning truyền thống với SageMaker đến Generative AI tiên tiến với Bedrock. Các trình diễn thực hành và hướng dẫn chuyên gia làm cho các khái niệm phức tạp trở nên dễ tiếp cận và có thể áp dụng ngay lập tức. Điểm chính rút ra là AWS cung cấp một hệ sinh thái hoàn chỉnh để xây dựng, triển khai và mở rộng ứng dụng AI/ML, giúp việc đưa đổi mới AI vào production dễ dàng hơn bao giờ hết.

@@ -175,50 +175,51 @@ Tham dự buổi **"Chu Trình Phát Triển Phần Mềm Dựa Trên AI: Tái T
 
 #### Một Số Hình Ảnh Sự Kiện
 
-<a href="#"><img src="1.jpg" alt="AI Đang Làm Đảo Lộn Phát Triển Phần Mềm - Trình bày bởi Toàn Huỳnh" width="500"/></a>
+![Workshop AI](images/1.jpg)
 
-<hr>
+---
 
-![alt text](12.jpg)
+![Workshop AI](images/2.jpg)
 
-<hr>
+---
 
-![alt text](11.jpg)
+![Workshop AI](images/3.jpg)
 
-<hr>
+---
 
-![alt text](10.jpg)
+![Workshop AI](images/4.jpg)
 
-<hr>
+---
 
-![alt text](9.jpg)
+![Workshop AI](images/5.jpg)
 
-<hr>
+---
 
-![alt text](8.jpg)
+![Workshop AI](images/6.jpg)
 
-<hr>
-![alt text](7.jpg)
+---
 
-<hr>
+![Workshop AI](images/7.jpg)
 
-![alt text](6.jpg)
+---
 
-<hr>
+![Workshop AI](images/8.jpg)
 
-![alt text](5.jpg)
-<hr>
+---
 
-![alt text](4.jpg)
-<hr>
+![Workshop AI](images/9.jpg)
 
-![alt text](3.jpg)
-<hr>
+---
 
-![alt text](2.jpg)
-<hr>
+![Workshop AI](images/10.jpg)
 
-![alt text](1.jpg)
+---
+
+![Workshop AI](images/11.jpg)
+
+---
+
+![Workshop AI](images/12.jpg)
 
 
 > Nhìn chung, buổi học này đã thay đổi căn bản quan điểm của tôi về phát triển phần mềm. Các trình diễn cho thấy rằng phát triển dựa trên AI không phải là một khái niệm tương lai xa vời mà là một thực tế thực tiễn có sẵn ngày hôm nay. Chìa khóa là bắt đầu thử nghiệm, đo lường kết quả và liên tục tinh chỉnh cách chúng ta tích hợp AI vào quy trình làm việc của mình.

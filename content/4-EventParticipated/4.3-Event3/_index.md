@@ -238,78 +238,148 @@ Attending the **"AI/ML/GenAI on AWS Workshop"** at AWS Vietnam Office was an imm
 - Implement **MLOps practices** using SageMaker Pipelines
 - Continue engaging with the **AWS AI/ML community** for ongoing learning
 
-#### Some event photos
+#### Event Pictures
 
-<p align="center"><img src="z7226089182052_a87c70d3e5127727e468ec919746aa14.jpg" alt="Lâm Tuấn Kiệt presenting Amazon SageMaker" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089182835_fd058a0d2646ba5ff862659b2a851ae3.jpg" alt="Lâm Tuấn Kiệt introducing ML Services" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089185538_6584042d4867f420dcdf26fbcd02f0d1.jpg" alt="Lâm Tuấn Kiệt demonstrating SageMaker Studio" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089188785_2f1d4536d4d2edb5bd8521822269e0d7.jpg" alt="Lâm Tuấn Kiệt explaining MLOps" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089195549_6134c1712f06d5fb6b0548a7a64e9750.jpg" alt="Đinh Lê Hoàng Anh presenting Amazon Bedrock" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089198697_2575442063921150c411a74a9edc32fc.jpg" alt="Đinh Lê Hoàng Anh introducing Foundation Models" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089200374_4b9ccc01a946fe9ed479a97f20ad5505.jpg" alt="Đinh Lê Hoàng Anh demonstrating Prompt Engineering" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089200375_950fb4714f844f7be177194a7e37a3a7.jpg" alt="Đinh Lê Hoàng Anh explaining RAG Architecture" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089203525_3469cd3ec7d62c0017a5263da64eff32.jpg" alt="Danh Hoàng Hiếu Nghị demonstrating Bedrock Agents" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089204044_8ce2e2975e24f9819d49e65be4db11c5.jpg" alt="Danh Hoàng Hiếu Nghị showing Guardrails" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089206129_2c222262ed586da5b52d7b6030a4c290.jpg" alt="Danh Hoàng Hiếu Nghị building GenAI Chatbot" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089216695_6b73693cec27aa10336add1ef9a03555.jpg" alt="Danh Hoàng Hiếu Nghị hands-on guidance" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089218316_67802975e0cb2fd27eca5753c983b534.jpg" alt="Participants networking" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089218462_0e1235918301fc52b7c887a7ea1096f0.jpg" alt="Group discussions" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089346755_df5c575289ae1e889d41530a7fa23152.jpg" alt="Networking session" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089354417_4443e34ead3ca15caf40177f0f9f49fc.jpg" alt="Q&A with speakers" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089356840_d7bda4bcca7392f3f9556ae7caa637ef.jpg" alt="Hands-on practice" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089356841_3c998c403886d96d8baf709f4dd4e5b6.jpg" alt="Workshop atmosphere" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089359526_87729a069d3be3043972c2c282e0becf.jpg" alt="Event photo" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089360189_8d1b4512bf90f8903f0734fe096ecb90.jpg" alt="Event photo" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089363728_27d9d0b068a8848a7a785090e98a754b.jpg" alt="Event photo" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089363826_ba00915e1e271ea506cf280d71ae827d.jpg" alt="Event photo" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089366343_1c4a98050cab1358bc27dab7a80a30f1.jpg" alt="Event photo" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089372751_ee454114f82defa27d40fe7e7aa52754.jpg" alt="Event photo" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089376197_63dd66304899769457969cade64e530e.jpg" alt="Event photo" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089380342_06bc2cb44d6cb83846a4e7c1439da961.jpg" alt="Event photo" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089383771_75be752db48944cbb444abe055a5371f.jpg" alt="Event photo" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089385022_19d8d1f46dfd4a6d96f3df63cf28a66b.jpg" alt="Event photo" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089387809_43295d0a2232a6f931293789e9b67e92.jpg" alt="Event photo" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089394453_f5dfbd223cf4d77fb7d75a8219d136b3.jpg" alt="Event photo" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089394608_8ddbe6d08a035fa4f121c1d0ebce372e.jpg" alt="Event photo" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089400963_b53f90b1d0b891779316d6b8123d0637.jpg" alt="Event photo" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089401010_47235c5b5898dbe77edd8d9294b8dac8.jpg" alt="Event photo" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089406027_4e19736efe7e840ce9e3412d682d06a7.jpg" alt="Event photo" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089411924_8f2a33fdef076d4a9ac07e59ae723840.jpg" alt="Event photo" width="600"/></p>
-<hr>
-<p align="center"><img src="z7226089412672_0d8e8c7c237589eda3e2b20edffa4dd7.jpg" alt="Event photo" width="600"/></p>
+![AI/ML Workshop](images/1.jpg)
+
+---
+
+![AI/ML Workshop](images/2.jpg)
+
+---
+
+![AI/ML Workshop](images/3.jpg)
+
+---
+
+![AI/ML Workshop](images/4.jpg)
+
+---
+
+![AI/ML Workshop](images/5.jpg)
+
+---
+
+![AI/ML Workshop](images/6.jpg)
+
+---
+
+![AI/ML Workshop](images/7.jpg)
+
+---
+
+![AI/ML Workshop](images/8.jpg)
+
+---
+
+![AI/ML Workshop](images/9.jpg)
+
+---
+
+![AI/ML Workshop](images/10.jpg)
+
+---
+
+![AI/ML Workshop](images/11.jpg)
+
+---
+
+![AI/ML Workshop](images/12.jpg)
+
+---
+
+![AI/ML Workshop](images/13.jpg)
+
+---
+
+![AI/ML Workshop](images/14.jpg)
+
+---
+
+![AI/ML Workshop](images/15.jpg)
+
+---
+
+![AI/ML Workshop](images/16.jpg)
+
+---
+
+![AI/ML Workshop](images/17.jpg)
+
+---
+
+![AI/ML Workshop](images/18.jpg)
+
+---
+
+![AI/ML Workshop](images/19.jpg)
+
+---
+
+![AI/ML Workshop](images/20.jpg)
+
+---
+
+![AI/ML Workshop](images/21.jpg)
+
+---
+
+![AI/ML Workshop](images/22.jpg)
+
+---
+
+![AI/ML Workshop](images/23.jpg)
+
+---
+
+![AI/ML Workshop](images/24.jpg)
+
+---
+
+![AI/ML Workshop](images/25.jpg)
+
+---
+
+![AI/ML Workshop](images/26.jpg)
+
+---
+
+![AI/ML Workshop](images/27.jpg)
+
+---
+
+![AI/ML Workshop](images/28.jpg)
+
+---
+
+![AI/ML Workshop](images/29.jpg)
+
+---
+
+![AI/ML Workshop](images/30.jpg)
+
+---
+
+![AI/ML Workshop](images/31.jpg)
+
+---
+
+![AI/ML Workshop](images/32.jpg)
+
+---
+
+![AI/ML Workshop](images/33.jpg)
+
+---
+
+![AI/ML Workshop](images/34.jpg)
+
+---
+
+![AI/ML Workshop](images/35.jpg)
+
+---
+
+![AI/ML Workshop](images/36.jpg)
 
 > Overall, this workshop provided a comprehensive introduction to AWS AI/ML services, from traditional machine learning with SageMaker to cutting-edge Generative AI with Bedrock. The hands-on demonstrations and expert guidance made complex concepts accessible and immediately applicable. The key takeaway is that AWS provides a complete ecosystem for building, deploying, and scaling AI/ML applications, making it easier than ever to bring AI innovations to production.

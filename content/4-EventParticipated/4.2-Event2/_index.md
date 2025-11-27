@@ -173,31 +173,52 @@ Attending the **"AI-Driven Development Life Cycle: Reimagining Software Engineer
 - Share learnings with the team and advocate for AI tool adoption where appropriate.
 - Continue engaging with the **AWS GenAI Builder Club** community for ongoing learning and support.
 
-#### Some event photos
+#### Event Pictures
 
-<a href="#"><img src="1.jpg" alt="Event Photo 1" width="500"/></a>
+![AI Workshop](images/1.jpg)
 
-<hr>
-<a href="#"><img src="2.jpg" alt="Event Photo 2" width="500"/></a>
-<hr>
-<a href="#"><img src="3.jpg" alt="Event Photo  3" width="500"/></a>
-<hr>
-<a href="#"><img src="4.jpg" alt="Event Photo 4" width="500"/></a>
-<hr>
-<a href="#"><img src="5.jpg" alt="Event Photo 5" width="500"/></a>
-<hr>
-<a href="#"><img src="6.jpg" alt="Event Photo 6" width="500"/></a>
-<hr>
-<a href="#"><img src="7.jpg" alt="Event Photo 7" width="500"/></a>
-<hr>
-<a href="#"><img src="8.jpg" alt="Event Photo 8" width="500"/></a>
-<hr>
-<a href="#"><img src="9.jpg" alt="Event Photo 9" width="500"/></a>
-<hr>
-<a href="#"><img src="10.jpg" alt="Event Photo 10" width="500"/></a>
-<hr>
-<a href="#"><img src="11.jpg" alt="Event Photo 11" width="500"/></a>
-<hr>
-<a href="#"><img src="12.jpg" alt="Event Photo 12" width="500"/></a>
+---
+
+![AI Workshop](images/2.jpg)
+
+---
+
+![AI Workshop](images/3.jpg)
+
+---
+
+![AI Workshop](images/4.jpg)
+
+---
+
+![AI Workshop](images/5.jpg)
+
+---
+
+![AI Workshop](images/6.jpg)
+
+---
+
+![AI Workshop](images/7.jpg)
+
+---
+
+![AI Workshop](images/8.jpg)
+
+---
+
+![AI Workshop](images/9.jpg)
+
+---
+
+![AI Workshop](images/10.jpg)
+
+---
+
+![AI Workshop](images/11.jpg)
+
+---
+
+![AI Workshop](images/12.jpg)
 
 > Overall, this session fundamentally changed my perspective on software development. The demonstrations showed that AI-driven development is not a distant future concept but a practical reality available today. The key is to start experimenting, measure results, and continuously refine how we integrate AI into our workflows.

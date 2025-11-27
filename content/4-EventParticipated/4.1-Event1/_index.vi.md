@@ -177,30 +177,36 @@ Tham dự sự kiện **"KICK-OFF AWS FIRST CLOUD JOURNEY WORKFORCE OJT FALL 202
 - Hiểu được **giá trị** của việc đầu tư thời gian học công nghệ AWS
 - Phát triển **sự tự tin** rằng với sự cống hiến, mình có thể đạt được thành công tương tự
 
-#### Một số hình ảnh sự kiện
-<hr>
+#### Một Số Hình Ảnh Sự Kiện
 
-![alt text](1.jpg)
-<hr>
+![Sự kiện KICK-OFF](images/1.jpg)
 
-![alt text](2.jpg)
-<hr>
+---
 
-![alt text](3.jpg)
-<hr>
+![Sự kiện KICK-OFF](images/2.jpg)
 
-![alt text](4.jpg)
-<hr>
+---
 
-![alt text](5.jpg)
-<hr>
+![Sự kiện KICK-OFF](images/3.jpg)
 
-![alt text](6.jpg)
-<hr>
+---
 
-![alt text](7.jpg)
-<hr>
+![Sự kiện KICK-OFF](images/4.jpg)
 
-![alt text](8.jpg)
+---
+
+![Sự kiện KICK-OFF](images/5.jpg)
+
+---
+
+![Sự kiện KICK-OFF](images/6.jpg)
+
+---
+
+![Sự kiện KICK-OFF](images/7.jpg)
+
+---
+
+![Sự kiện KICK-OFF](images/8.jpg)
 
 > Nhìn chung, sự kiện KICK-OFF là một trải nghiệm đầy cảm hứng, mang lại cho mình động lực mạnh mẽ để tự tin bước vào con đường sự nghiệp trong ngành công nghệ. Những hiểu biết từ các chuyên gia và alumni đã mở ra tầm nhìn mới, giúp mình hiểu rõ hơn về cách xây dựng hệ thống hiện đại và làm việc hiệu quả trong môi trường chuyên nghiệp. Mình mong chờ được áp dụng những kiến thức này vào học tập và các dự án tương lai.
