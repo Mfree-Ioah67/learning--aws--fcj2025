@@ -28,7 +28,7 @@ Typically, and as a standard, a worklog is carried out over about 3 months (thro
 
 **Week 7:** [AWS Analytics and Data Services](1.7-week7/)
 
-**Week 8:** [Doing task H...](1.8-week8/)
+**Week 8:** [Project Proposal: Blood Donation Support System](1.8-week8/)
 
 **Week 9:** [Doing task I...](1.9-week9/)
 

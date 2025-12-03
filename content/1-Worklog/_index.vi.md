@@ -28,7 +28,7 @@ Thông thường và cũng là tiêu chuẩn, một worklog được thực hi�
 
 **Tuần 7:** [Dịch Vụ Analytics và Data của AWS](1.7-week7/)
 
-**Tuần 8:** [Làm công việc H...](1.8-week8/)
+**Tuần 8:** [Đề Xuất Dự Án: Hệ Thống Hỗ Trợ Hiến Máu](1.8-week8/)
 
 **Tuần 9:** [Làm công việc I...](1.9-week9/)
 
