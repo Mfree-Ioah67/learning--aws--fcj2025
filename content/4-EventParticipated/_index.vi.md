@@ -21,7 +21,7 @@ pre: " <b> 4. </b> "
 > * Kết quả hoặc giá trị thu được (bài học, kỹ năng mới, đóng góp cho nhóm/dự án)
 > * Việc liệt kê này giúp chứng minh sự tham gia thực tế của bạn cũng như các kỹ năng mềm và kinh nghiệm bạn đã có được từ mỗi sự kiện.
 
-Trong quá trình thực tập, mình đã tham gia bốn sự kiện AWS. Mỗi sự kiện đều là một trải nghiệm đáng nhớ, cung cấp kiến thức quý giá về công nghệ đám mây, các thực hành tốt nhất và ứng dụng thực tế, cùng với cơ hội giao lưu và những khoảnh khắc tuyệt vời với cộng đồng AWS.
+Trong quá trình thực tập, mình đã tham gia năm sự kiện AWS. Mỗi sự kiện đều là một trải nghiệm đáng nhớ, cung cấp kiến thức quý giá về công nghệ đám mây, các thực hành tốt nhất và ứng dụng thực tế, cùng với cơ hội giao lưu và những khoảnh khắc tuyệt vời với cộng đồng AWS.
 
 ### [Sự kiện 1: AWS FCJ Community KICK-OFF](4.1-Event1/)  
 &emsp;**Tên Sự Kiện:** AWS FCJ Community KICK-OFF  
@@ -56,3 +56,12 @@ Trong quá trình thực tập, mình đã tham gia bốn sự kiện AWS. Mỗi
 &emsp;**Địa Điểm:** Văn phòng AWS Việt Nam  
 &emsp;**Vai Trò:** Người tham dự  
 &emsp;**Mô Tả:** Workshop toàn diện cả ngày về các thực hành DevOps bao gồm CI/CD pipelines, Infrastructure as Code với CloudFormation và CDK, các dịch vụ container (ECS, EKS, App Runner), và giám sát với CloudWatch và X-Ray.
+
+---
+
+### [Sự kiện 5: AWS Cloud Mastery Series #3 - Security Pillar](4.5-Event5/)  
+&emsp;**Tên Sự Kiện:** AWS Cloud Mastery Series #3 - Security Pillar  
+&emsp;**Ngày & Giờ:** 8:30 sáng – 12:00 trưa, Thứ Bảy, ngày 29 tháng 11 năm 2025  
+&emsp;**Địa Điểm:** Bitexco Financial Tower, Quận 1, TP. Hồ Chí Minh  
+&emsp;**Vai Trò:** Người tham dự  
+&emsp;**Mô Tả:** Buổi sáng tập trung vào các kiến thức cơ bản về AWS Well-Architected Security Pillar, bao gồm năm lĩnh vực chính: Identity & Access Management (IAM), Detection & Monitoring, Infrastructure Protection, Data Protection, và Incident Response. Hoàn hảo cho người mới bắt đầu học các kiến thức bảo mật AWS cơ bản.

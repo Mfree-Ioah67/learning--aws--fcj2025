@@ -21,7 +21,7 @@ pre: " <b> 4. </b> "
 > * Outcomes or value gained (lessons learned, new skills, contribution to the team/project)
 > * This listing helps demonstrate your actual participation as well as the soft skills and experience you have gained from each event.
 
-During my internship, I participated in four AWS events. Each one was a memorable experience that provided valuable knowledge about cloud technologies, best practices, and real-world applications, along with networking opportunities and wonderful moments with the AWS community.
+During my internship, I participated in five AWS events. Each one was a memorable experience that provided valuable knowledge about cloud technologies, best practices, and real-world applications, along with networking opportunities and wonderful moments with the AWS community.
 
 ### [Event 1: AWS FCJ Community KICK-OFF](4.1-Event1/)  
 &emsp;**Event Name:** AWS FCJ Community KICK-OFF  
@@ -56,3 +56,12 @@ During my internship, I participated in four AWS events. Each one was a memorabl
 &emsp;**Location:** AWS Vietnam Office  
 &emsp;**Role:** Attendee  
 &emsp;**Description:** Comprehensive full-day workshop on DevOps practices including CI/CD pipelines, Infrastructure as Code with CloudFormation and CDK, container services (ECS, EKS, App Runner), and monitoring with CloudWatch and X-Ray.
+
+---
+
+### [Event 5: AWS Cloud Mastery Series #3 - Security Pillar](4.5-Event5/)  
+&emsp;**Event Name:** AWS Cloud Mastery Series #3 - Security Pillar  
+&emsp;**Date & Time:** 8:30 AM – 12:00 PM, Saturday, November 29, 2025  
+&emsp;**Location:** Bitexco Financial Tower, District 1, Ho Chi Minh City  
+&emsp;**Role:** Attendee  
+&emsp;**Description:** Morning session focused on AWS Well-Architected Security Pillar fundamentals, covering five key areas: Identity & Access Management (IAM), Detection & Monitoring, Infrastructure Protection, Data Protection, and Incident Response. Perfect for beginners learning AWS security basics.
