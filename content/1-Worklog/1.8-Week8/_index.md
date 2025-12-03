@@ -1,58 +1,94 @@
 ﻿---
 title: "Week 8 Worklog"
-date: 2025-09-10
-weight: 1
+date: 2025-10-27
+weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 8 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+- Complete project proposal for Blood Donation Support System (BDSS)
+- Design AWS cloud architecture
+- Define technical stack and requirements
+- Estimate budget and timeline
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Day | Task | Start Date | Completion Date | Reference Material |
+|-----|------|------------|-----------------|-------------------|
+| 1-2 | - Research blood donation system requirements <br> - Define project scope and objectives <br> - Identify user groups and features | 2025/10/27 | 2025/10/28 | Healthcare system case studies |
+| 3-4 | - Design AWS architecture diagram <br>&emsp; + Frontend: Route 53, CloudFront, S3 <br>&emsp; + Backend: API Gateway, EC2, RDS <br>&emsp; + Security: Cognito, IAM <br> - Define tech stack: React+Vite, Spring Boot, MySQL | 2025/10/29 | 2025/10/30 | <https://aws.amazon.com/architecture/> |
+| 5-6 | - Estimate AWS service costs <br> - Create implementation timeline <br> - Assess risks and mitigation strategies | 2025/10/31 | 2025/11/01 | <https://calculator.aws/> |
+| 7 | - Finalize proposal document <br> - Prepare presentation <br> - Weekly review | 2025/11/02 | 2025/11/02 | Technical writing guidelines |
 
 ### Week 8 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+- **Completed Project Proposal:**
+  - Researched blood donation management challenges and defined solution
+  - Identified key problems: manual processes, inefficient donor search, lack of synchronization
+  - Defined 4 user groups: Guest, Member, Staff, Admin
 
-* Successfully created and configured an AWS Free Tier account.
+- **AWS Architecture Design:**
+  - Designed 3-tier architecture: Frontend (Route 53, CloudFront, S3), Backend (API Gateway, EC2, RDS), Security (Cognito, IAM)
+  - Created architecture diagram showing component interactions
+  - Planned VPC with public/private subnets for security
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+- **Technical Stack:**
+  - **Frontend:** React + Vite
+  - **Backend:** Spring Boot on EC2
+  - **Database:** MySQL on RDS
+  - **Auth:** Cognito (4 roles)
+  - **CI/CD:** GitLab → CodePipeline → EC2
+  - **Monitoring:** CloudWatch, SNS
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+- **Budget & Timeline:**
+  - Estimated ~$8.90/month for AWS services
+  - Planned 5-month implementation timeline
+  - Identified cost optimization with Free Tier
 
-* Used AWS CLI to perform basic operations such as:
+- **Risk Assessment:**
+  - Identified technical, security, and budget risks
+  - Defined mitigation strategies (backups, WAF, monitoring)
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+### Challenges Encountered:
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- **Architecture Design:** Balancing simplicity with scalability → Used modular design
+- **Cost Control:** Staying within budget → Leveraged Free Tier and right-sized instances
+- **Security:** Health data compliance → Implemented encryption and strict IAM policies
 
+### Key Learnings:
+
+- Learned AWS architecture design principles
+- Understood project planning and documentation importance
+- Gained experience in cost estimation and risk assessment
+
+### References:
+
+**AWS Architecture:**
+- [AWS Architecture Center](https://aws.amazon.com/architecture/) - Best practices and reference architectures
+- [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/) - Design principles
+- [AWS Solutions Library](https://aws.amazon.com/solutions/) - Pre-built solutions
+
+**AWS Services Documentation:**
+- [Amazon EC2](https://docs.aws.amazon.com/ec2/) - Compute instances
+- [Amazon RDS](https://docs.aws.amazon.com/rds/) - Managed database
+- [Amazon API Gateway](https://docs.aws.amazon.com/apigateway/) - API management
+- [Amazon Cognito](https://docs.aws.amazon.com/cognito/) - User authentication
+- [AWS CodePipeline](https://docs.aws.amazon.com/codepipeline/) - CI/CD automation
+- [Amazon CloudFront](https://docs.aws.amazon.com/cloudfront/) - Content delivery
+- [Amazon SNS](https://docs.aws.amazon.com/sns/) - Notification service
+
+**Cost Management:**
+- [AWS Pricing Calculator](https://calculator.aws/) - Cost estimation tool
+- [AWS Cost Management](https://aws.amazon.com/aws-cost-management/) - Cost optimization
+- [AWS Free Tier](https://aws.amazon.com/free/) - Free tier details
+
+**Project Management:**
+- [Project Management Best Practices](https://www.pmi.org/) - PMI guidelines
+- [Agile Methodology](https://www.agilealliance.org/) - Agile development
+- [Risk Management Framework](https://www.nist.gov/cyberframework) - NIST framework
+
+**Healthcare IT:**
+- [HIPAA Compliance on AWS](https://aws.amazon.com/compliance/hipaa-compliance/) - Healthcare data security
+- [Healthcare Solutions on AWS](https://aws.amazon.com/health/) - Industry solutions
