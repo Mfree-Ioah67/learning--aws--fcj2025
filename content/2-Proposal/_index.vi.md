@@ -8,6 +8,8 @@ pre: " <b> 2. </b> "
 
 # Blood Donation Support System (BDSS)
 
+📄 **[Tải Tài Liệu Đề Xuất Đầy Đủ (Word)](Proposal%20Template.docx)**
+
 ## 1. Tóm tắt điều hành
 
 **Blood Donation Support System (BDSS)** là nền tảng web hỗ trợ quản lý và kết nối người hiến máu với cơ sở y tế. Dự án được phát triển bởi nhóm sinh viên tại TP. Hồ Chí Minh nhằm tối ưu quy trình hiến máu, giảm tải khâu tìm kiếm người hiến và nâng cao hiệu quả truyền thông y tế.

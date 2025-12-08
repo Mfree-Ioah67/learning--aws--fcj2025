@@ -8,6 +8,8 @@ pre: " <b> 2. </b> "
 
 # Blood Donation Support System (BDSS)
 
+📄 **[Download Full Proposal Document (Word)](Proposal%20Template.docx)**
+
 ## 1. Executive Summary
 
 **Blood Donation Support System (BDSS)** is a web platform that supports blood donation management and connects blood donors with healthcare facilities. The project is developed by a student team in Ho Chi Minh City to optimize the blood donation process, reduce the burden of finding donors, and improve healthcare communication efficiency.
