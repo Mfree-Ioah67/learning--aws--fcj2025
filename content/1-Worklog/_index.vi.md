@@ -30,10 +30,10 @@ Thông thường và cũng là tiêu chuẩn, một worklog được thực hi�
 
 **Tuần 8:** [Đề Xuất Dự Án: Hệ Thống Hỗ Trợ Hiến Máu](1.8-week8/)
 
-**Tuần 9:** [Làm công việc I...](1.9-week9/)
+**Tuần 9:** [Thiết Lập Dự Án và Hạ Tầng AWS](1.9-week9/)
 
-**Tuần 10:** [Làm công việc L...](1.10-week10/)
+**Tuần 10:** [Phát Triển Backend và Deploy EC2](1.10-week10/)
 
-**Tuần 11:** [Làm công việc M...](1.11-week11/)
+**Tuần 11:** [Phát Triển Frontend và Deploy S3/CloudFront](1.11-week11/)
 
-**Tuần 12:** [Làm công việc N...](1.12-week12/)
+**Tuần 12:** [CI/CD Pipeline, Monitoring và Hoàn Thành Dự Án](1.12-week12/)

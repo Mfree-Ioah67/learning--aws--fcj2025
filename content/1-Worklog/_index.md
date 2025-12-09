@@ -30,10 +30,10 @@ Typically, and as a standard, a worklog is carried out over about 3 months (thro
 
 **Week 8:** [Project Proposal: Blood Donation Support System](1.8-week8/)
 
-**Week 9:** [Doing task I...](1.9-week9/)
+**Week 9:** [Project Setup and AWS Infrastructure](1.9-week9/)
 
-**Week 10:** [Doing task L...](1.10-week10/)
+**Week 10:** [Backend Development and EC2 Deployment](1.10-week10/)
 
-**Week 11:** [Doing task M...](1.11-week11/)
+**Week 11:** [Frontend Development and S3/CloudFront Deployment](1.11-week11/)
 
-**Week 12:** [Doing task N...](1.12-week12/)
+**Week 12:** [CI/CD Pipeline, Monitoring, and Project Completion](1.12-week12/)
