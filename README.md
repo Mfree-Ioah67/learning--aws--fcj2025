@@ -1,29 +1,44 @@
-# Internship Report - AWS FCJ 2025
+# AWS First Cloud Journey 2025 - Internship Report
 
 [![Deploy Hugo site to GitHub Pages](https://github.com/Mfree-Ioah67/learning--aws--fcj2025/actions/workflows/hugo.yml/badge.svg)](https://github.com/Mfree-Ioah67/learning--aws--fcj2025/actions/workflows/hugo.yml)
 
-Báo cáo thực tập AWS First Cloud Journey 2025 - Website được xây dựng bằng Hugo và deploy trên GitHub Pages.
+Documentation of my AWS First Cloud Journey 2025 internship experience. Built with Hugo and deployed on GitHub Pages.
 
 🌐 **Live Site**: [https://mfree-ioah67.github.io/learning--aws--fcj2025/](https://mfree-ioah67.github.io/learning--aws--fcj2025/)
 
-## 📋 Nội dung
+## 📋 Content Overview
 
-- **1-Worklog**: Nhật ký công việc 12 tuần thực tập
-- **2-Proposal**: Đề xuất dự án
-- **3-BlogsTranslated**: Các bài blog AWS đã dịch
-- **4-EventParticipated**: Sự kiện đã tham gia
-- **5-Workshop**: Workshop thực hành AWS (S3, VPC, Endpoints)
-- **6-Self-Evaluation**: Tự đánh giá
-- **7-Feedback**: Phản hồi
+### 1. Worklog (12 Weeks)
+- **Weeks 1-7**: AWS fundamentals (EC2, S3, VPC, RDS, Lambda, CloudFormation, CI/CD)
+- **Week 8**: Blood Donation Support System project proposal
+- **Weeks 9-12**: Full-stack project implementation on AWS
+
+### 2. Project Proposal
+Complete project documentation with AWS architecture design, cost estimation (~$8.90/month), and implementation plan.
+
+**Tech Stack**: React+Vite (S3/CloudFront) | Spring Boot (EC2) | MySQL (RDS) | CodePipeline | CloudWatch
+
+### 3. Blogs Translated (3 Articles)
+AWS technical blog translations from English to Vietnamese:
+- Secure Internet Access to SaaS PrivateLink Endpoints
+- AWS Networking & Content Delivery Best Practices
+- Building Scalable Applications with AWS Serverless
+
+### 4. Events Participated (5 Events)
+- Kick-off AWS FCJ Workforce
+- AWS Community Day
+- AWS Cloud Mastery Series: AI/ML, DevOps, Security Pillar
+
+### 5. Workshop
+Hands-on lab: **Deploy DNA Analysis Application on AWS** using CloudFormation, VPC, EC2, RDS, S3, and CloudFront
+
+### 6. Self-Evaluation
+Honest self-assessment of skills, strengths, and areas for improvement
+
+### 7. Feedback
+Program feedback with suggestions for improvement and recommendations
 
 ## 🚀 Quick Start
-
-### Prerequisites
-
-- [Hugo Extended](https://gohugo.io/installation/) v0.134.3 hoặc mới hơn
-- Git
-
-### Local Development
 
 ```bash
 # Clone repository
@@ -33,11 +48,11 @@ cd learning--aws--fcj2025/fcj-workshop-template-main
 # Run local server
 hugo server -D
 
-# Build static files
+# Build for production
 hugo --minify
 ```
 
-Server sẽ chạy tại: `http://localhost:1313/learning--aws--fcj2025/`
+Server runs at: `http://localhost:1313/learning--aws--fcj2025/`
 
 ## 📁 Project Structure
 
@@ -45,130 +60,98 @@ Server sẽ chạy tại: `http://localhost:1313/learning--aws--fcj2025/`
 fcj-workshop-template-main/
 ├── .github/
 │   └── workflows/
-│       └── hugo.yml                    # GitHub Actions deployment workflow
+│       └── hugo.yml              # GitHub Actions deployment
+├── content/                      # Main content (bilingual EN/VI)
+│   ├── 1-Worklog/                # 📅 Weekly logs (Week 1-12)
+│   │   ├── 1.1-Week1/            # AWS Introduction, Console & CLI
+│   │   ├── 1.2-Week2/            # S3, IAM, CloudWatch
+│   │   ├── 1.3-Week3/            # VPC, Networking
+│   │   ├── 1.4-Week4/            # RDS, DynamoDB
+│   │   ├── 1.5-Week5/            # Lambda, Serverless
+│   │   ├── 1.6-Week6/            # CloudFormation, IaC
+│   │   ├── 1.7-Week7/            # DevOps, CI/CD
+│   │   ├── 1.8-Week8/            # Project Proposal
+│   │   ├── 1.9-Week9/            # Infrastructure Setup
+│   │   ├── 1.10-Week10/          # Backend Development
+│   │   ├── 1.11-Week11/          # Frontend Development
+│   │   └── 1.12-Week12/          # CI/CD & Deployment
+│   │
+│   ├── 2-Proposal/               # 📋 Blood Donation System
+│   │   ├── _index.md             # English version
+│   │   ├── _index.vi.md          # Vietnamese version
+│   │   └── Proposal Template.docx
+│   │
+│   ├── 3-BlogsTranslated/        # 📝 AWS Blogs (EN → VI)
+│   │   ├── 3.1-Blog1/            # PrivateLink & Verified Access
+│   │   ├── 3.2-Blog2/            # Networking Best Practices
+│   │   └── 3.3-Blog3/            # Serverless Applications
+│   │
+│   ├── 4-EventParticipated/      # 🎉 AWS Events (5 events)
+│   │   ├── 4.1-Event1/           # Kick-off
+│   │   ├── 4.2-Event2/           # Community Day
+│   │   ├── 4.3-Event3/           # AI/ML Series
+│   │   ├── 4.4-Event4/           # DevOps Series
+│   │   └── 4.5-Event5/           # Security Series
+│   │
+│   ├── 5-Workshop/               # 🛠️ DNA Analysis App
+│   │   ├── 5.1-overview/
+│   │   ├── 5.2-prerequisite/
+│   │   ├── 5.3-deploy-infrastructure/
+│   │   ├── 5.4-deploy-backend/
+│   │   ├── 5.5-deploy-frontend/
+│   │   ├── 5.6-testing/
+│   │   ├── 5.7-monitoring/
+│   │   └── 5.8-cleanup/
+│   │
+│   ├── 6-Self-evaluation/        # 📊 Self-assessment
+│   │   ├── _index.md
+│   │   └── _index.vi.md
+│   │
+│   └── 7-Feedback/               # 💬 Program feedback
+│       ├── _index.md
+│       └── _index.vi.md
 │
-├── archetypes/
-│   └── default.md                      # Content template
-│
-├── content/                            # Markdown content (bilingual: en/vi)
-│   ├── 1-Worklog/                      # 📅 Weekly internship logs (Week 1-12)
-│   │   ├── 1.1-Week1/
-│   │   ├── 1.2-Week2/
-│   │   └── ... (1.3 - 1.12)
-│   │
-│   ├── 2-Proposal/                     # 📋 Project proposal
-│   │
-│   ├── 3-BlogsTranslated/              # 📝 Translated AWS blogs (6 blogs)
-│   │   ├── 3.1-Blog1/
-│   │   ├── 3.2-Blog2/
-│   │   └── ... (3.3 - 3.6)
-│   │
-│   ├── 4-EventParticipated/            # 🎉 AWS events attended
-│   │   ├── 4.1-Event1/
-│   │   └── 4.2-Event2/
-│   │
-│   ├── 5-Workshop/                     # 🛠️ Hands-on AWS workshop
-│   │   ├── 5.1-Workshop-overview/
-│   │   ├── 5.2-Prerequiste/
-│   │   ├── 5.3-S3-vpc/                 # Gateway Endpoint
-│   │   │   ├── 5.3.1-create-gwe/
-│   │   │   └── 5.3.2-test-gwe/
-│   │   ├── 5.4-S3-onprem/              # Interface Endpoint
-│   │   │   ├── 5.4.1-prepare/
-│   │   │   ├── 5.4.2-create-interface-enpoint/
-│   │   │   ├── 5.4.3-test-endpoint/
-│   │   │   └── 5.4.4-dns-simulation/
-│   │   ├── 5.5-Policy/
-│   │   └── 5.6-Cleanup/
-│   │
-│   ├── 6-Self-evaluation/              # 📊 Self assessment
-│   └── 7-Feedback/                     # 💬 Feedback & reflection
-│
-├── layouts/
-│   ├── partials/                       # Custom HTML partials
-│   │   ├── custom-footer.html
-│   │   ├── logo.html
-│   │   └── menu-footer.html
-│   └── shortcodes/                     # Custom Hugo shortcodes
-│       ├── ghcontributors.html
-│       ├── tab.html
-│       └── tabs.html
-│
-├── static/                             # Static assets (images, fonts, CSS)
-│   ├── css/
-│   │   ├── theme-mine.css
-│   │   └── theme-workshop.css
-│   ├── fonts/
+├── static/                       # Static assets
 │   ├── images/
-│   │   ├── 2-Proposal/                 # Architecture diagrams
-│   │   ├── 5-Workshop/                 # Workshop screenshots
-│   │   ├── avatar.png
-│   │   └── favicon.png
-│   └── AWS_Logo.svg
+│   │   ├── 1-Worklog/
+│   │   ├── 2-Proposal/
+│   │   ├── 4-EventParticipated/
+│   │   └── 5-Workshop/
+│   └── css/
 │
 ├── themes/
-│   └── hugo-theme-learn/               # Hugo Learn theme
+│   └── hugo-theme-learn/
 │
-├── public/                             # 🚀 Generated static site (auto-built)
-│
-├── config.toml                         # Hugo configuration
-└── README.md                           # This file
+├── config.toml                   # Hugo configuration
+└── README.md
 ```
-
-### 📊 Content Statistics
-
-- **Weekly Logs**: 12 weeks of detailed work reports
-- **Translated Blogs**: 6 AWS technical articles
-- **Events**: 2 AWS community events documented
-- **Workshop**: Complete hands-on lab with S3 VPC Endpoints
-- **Languages**: Full bilingual support (English & Vietnamese)
 
 ## 🛠️ Tech Stack
 
-- **Static Site Generator**: Hugo v0.134.3 (Extended)
-- **Theme**: [Hugo Learn Theme](https://github.com/matcornic/hugo-theme-learn)
+- **Site**: Hugo v0.134.3 + Hugo Learn Theme
 - **Deployment**: GitHub Pages via GitHub Actions
-- **Languages**: Vietnamese & English
+- **Languages**: English & Vietnamese (bilingual)
 
-## 🚢 Deployment
+## 📊 Statistics
 
-Website tự động deploy khi push lên branch `main`:
-
-1. GitHub Actions chạy workflow
-2. Build Hugo site với `hugo --minify`
-3. Deploy lên GitHub Pages
-
-Xem deployment status tại [Actions tab](https://github.com/Mfree-Ioah67/learning--aws--fcj2025/actions)
-
-## 🔧 Configuration
-
-Chỉnh sửa `config.toml` để thay đổi:
-
-- Base URL
-- Site title
-- Theme variant
-- Menu shortcuts
-- Language settings
-
-## 📚 Workshop Content
-
-Workshop chính: **Access S3 from VPC and On-premises**
-
-- Create Gateway Endpoint
-- Create Interface Endpoint
-- DNS Simulation
-- Policy Configuration
+- 12 weeks of detailed work reports
+- 3 translated AWS technical blogs
+- 5 AWS community events documented
+- 1 complete full-stack project on AWS
+- 50+ documentation pages (bilingual)
 
 ## 👤 Author
 
-**Email**: phamhoanghainguyen12a12dt@gmail.com
+**Email**: phamhoanghainguyen12a12dt@gmail.com  
+**Program**: AWS First Cloud Journey 2025 (Sept - Dec 2025)  
+**Institution**: FPT University
 
 ## 🔗 Links
 
 - [AWS Study Group Facebook](https://www.facebook.com/groups/awsstudygroupfcj/)
+- [AWS Study Group Website](https://awsstudygroup.com/)
 - [Hugo Documentation](https://gohugo.io/documentation/)
-- [Hugo Learn Theme Docs](https://learn.netlify.app/en/)
 
 ## 📄 License
 
-This project is for educational purposes as part of AWS FCJ 2025 internship program.
+Educational purposes - AWS FCJ 2025 internship program.
