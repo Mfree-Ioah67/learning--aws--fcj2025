@@ -1,58 +1,62 @@
 ﻿---
 title: "Week 9 Worklog"
-date: 2025-09-10
-weight: 1
+date: 2025-11-03
+weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 9 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+- Finalize project proposal and get approval
+- Set up development environment
+- Initialize project structure for Frontend and Backend
+- Configure AWS infrastructure foundation
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Day | Task | Start Date | Completion Date | Reference Material |
+|-----|------|------------|-----------------|-------------------|
+| 1-2 | - Present project proposal to team <br> - Get feedback and approval <br> - Finalize technical requirements | 2025/11/03 | 2025/11/04 | Project proposal document |
+| 3-4 | - Set up development environment <br>&emsp; + Install Node.js, Maven, AWS CLI <br>&emsp; + Configure Git repository <br> - Initialize project structure <br>&emsp; + Create React + Vite frontend <br>&emsp; + Create Spring Boot backend | 2025/11/05 | 2025/11/06 | <https://vitejs.dev/> <br> <https://spring.io/> |
+| 5-7 | - Configure AWS foundation <br>&emsp; + Create VPC and subnets <br>&emsp; + Set up Security Groups <br>&emsp; + Create RDS MySQL database <br>&emsp; + Configure S3 buckets <br> - Test database connectivity | 2025/11/07 | 2025/11/09 | <https://docs.aws.amazon.com/> |
 
 ### Week 9 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+- **Proposal Approval:**
+  - Presented Blood Donation Support System proposal
+  - Received approval from mentors and team
+  - Finalized technical stack: React+Vite, Spring Boot, MySQL on RDS
 
-* Successfully created and configured an AWS Free Tier account.
+- **Development Environment:**
+  - Installed and configured development tools
+  - Set up Git repository for version control
+  - Created project structure with separate FE and BE folders
+  - Initialized React frontend with Vite build tool
+  - Created Spring Boot backend with Maven
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+- **AWS Infrastructure Setup:**
+  - Created VPC with public and private subnets
+  - Configured Security Groups for EC2, RDS, and ALB
+  - Provisioned RDS MySQL database instance
+  - Created S3 buckets for frontend hosting and backend artifacts
+  - Tested database connection from local environment
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+### Challenges Encountered:
 
-* Used AWS CLI to perform basic operations such as:
+- **VPC Configuration:** Understanding subnet routing → Studied AWS VPC documentation
+- **RDS Connectivity:** Connection timeout issues → Configured Security Group inbound rules properly
+- **Project Structure:** Organizing monorepo → Separated FE, BE, and AWS folders
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+### Key Learnings:
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- Learned VPC networking basics and subnet design
+- Understood RDS security group configuration
+- Gained experience with project initialization and structure
 
+### References:
+
+- [React + Vite](https://vitejs.dev/guide/)
+- [Spring Boot](https://spring.io/guides/gs/spring-boot/)
+- [AWS VPC](https://docs.aws.amazon.com/vpc/)
+- [Amazon RDS](https://docs.aws.amazon.com/rds/)

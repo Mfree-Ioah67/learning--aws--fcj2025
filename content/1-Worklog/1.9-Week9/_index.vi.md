@@ -1,60 +1,65 @@
 ﻿---
-title: "Worklog Tuần 9"
-date: 2025-09-10
-weight: 1
+title: "Nhật Ký Tuần 9"
+date: 2025-11-03
+weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục Tiêu Tuần 9:
 
-### Mục tiêu tuần 9:
+- Hoàn thiện đề xuất dự án và nhận phê duyệt
+- Thiết lập môi trường phát triển
+- Khởi tạo cấu trúc dự án Frontend và Backend
+- Cấu hình nền tảng hạ tầng AWS
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Các nhiệm vụ cần thực hiện trong tuần:
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Ngày | Nhiệm vụ | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+|------|----------|--------------|-----------------|-------------------|
+| 1-2 | - Trình bày đề xuất dự án cho team <br> - Nhận feedback và phê duyệt <br> - Hoàn thiện yêu cầu kỹ thuật | 2025/11/03 | 2025/11/04 | Tài liệu đề xuất dự án |
+| 3-4 | - Thiết lập môi trường phát triển <br>&emsp; + Cài đặt Node.js, Maven, AWS CLI <br>&emsp; + Cấu hình Git repository <br> - Khởi tạo cấu trúc dự án <br>&emsp; + Tạo React + Vite frontend <br>&emsp; + Tạo Spring Boot backend | 2025/11/05 | 2025/11/06 | <https://vitejs.dev/> <br> <https://spring.io/> |
+| 5-7 | - Cấu hình nền tảng AWS <br>&emsp; + Tạo VPC và subnets <br>&emsp; + Thiết lập Security Groups <br>&emsp; + Tạo RDS MySQL database <br>&emsp; + Cấu hình S3 buckets <br> - Kiểm tra kết nối database | 2025/11/07 | 2025/11/09 | <https://docs.aws.amazon.com/> |
 
+### Thành Tựu Tuần 9:
 
-### Kết quả đạt được tuần 9:
+- **Phê Duyệt Đề Xuất:**
+  - Trình bày đề xuất Hệ Thống Hỗ Trợ Hiến Máu
+  - Nhận phê duyệt từ mentors và team
+  - Hoàn thiện tech stack: React+Vite, Spring Boot, MySQL trên RDS
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+- **Môi Trường Phát Triển:**
+  - Cài đặt và cấu hình các công cụ phát triển
+  - Thiết lập Git repository cho version control
+  - Tạo cấu trúc dự án với thư mục FE và BE riêng biệt
+  - Khởi tạo React frontend với Vite build tool
+  - Tạo Spring Boot backend với Maven
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+- **Thiết Lập Hạ Tầng AWS:**
+  - Tạo VPC với public và private subnets
+  - Cấu hình Security Groups cho EC2, RDS và ALB
+  - Provisioning RDS MySQL database instance
+  - Tạo S3 buckets cho frontend hosting và backend artifacts
+  - Kiểm tra kết nối database từ môi trường local
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+### Các Thách Thức Gặp Phải:
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+- **Cấu Hình VPC:** Hiểu về subnet routing → Nghiên cứu tài liệu AWS VPC
+- **Kết Nối RDS:** Vấn đề connection timeout → Cấu hình Security Group inbound rules đúng cách
+- **Cấu Trúc Dự Án:** Tổ chức monorepo → Tách riêng thư mục FE, BE và AWS
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+### Bài Học Chính:
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+- Học các kiến thức cơ bản về VPC networking và thiết kế subnet
+- Hiểu cấu hình security group cho RDS
+- Có kinh nghiệm khởi tạo và cấu trúc dự án
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+### Tài Liệu Tham Khảo:
+
+- [React + Vite](https://vitejs.dev/guide/)
+- [Spring Boot](https://spring.io/guides/gs/spring-boot/)
+- [AWS VPC](https://docs.aws.amazon.com/vpc/)
+- [Amazon RDS](https://docs.aws.amazon.com/rds/)
 
 
 
