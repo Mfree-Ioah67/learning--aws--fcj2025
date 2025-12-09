@@ -277,7 +277,7 @@ Before deployment, understand the costs:
 
 | Service | Instance Type | Cost/month (USD) |
 |---------|---------------|------------------|
-| EC2 | t2.micro | $3.50 |
+| EC2 | t3.nano | $3.50 |
 | RDS MySQL | db.t3.micro | $2.80 |
 | API Gateway | - | $0.50 |
 | S3 + CloudFront | - | $0.80 |

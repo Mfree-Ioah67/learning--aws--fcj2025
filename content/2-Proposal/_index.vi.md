@@ -140,7 +140,7 @@ Hệ thống được thiết kế theo kiến trúc **3-tier trên AWS Cloud** 
 
 | Dịch vụ                         | Ước tính chi phí/tháng (USD) | Ghi chú              |
 | ------------------------------- | ---------------------------- | -------------------- |
-| EC2 (t2.micro)                  | 3.50                         | Backend REST API     |
+| EC2 (t3.nano)                   | 3.50                         | Backend REST API     |
 | Amazon RDS (MySQL)              | 2.80                         | 20 GB storage        |
 | API Gateway                     | 0.50                         | 5.000 request        |
 | CloudFront + S3                 | 0.80                         | Website + CDN        |

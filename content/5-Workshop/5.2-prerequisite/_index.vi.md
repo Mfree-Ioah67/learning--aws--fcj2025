@@ -279,7 +279,7 @@ Trước khi triển khai, hãy hiểu rõ chi phí:
 
 | Dịch vụ | Instance Type | Chi phí/tháng (USD) |
 |---------|---------------|---------------------|
-| EC2 | t2.micro | $3.50 |
+| EC2 | t3.nano | $3.50 |
 | RDS MySQL | db.t3.micro | $2.80 |
 | API Gateway | - | $0.50 |
 | S3 + CloudFront | - | $0.80 |
