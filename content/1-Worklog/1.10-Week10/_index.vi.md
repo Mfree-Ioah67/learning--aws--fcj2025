@@ -1,60 +1,63 @@
 ﻿---
-title: "Worklog Tuần 10"
-date: 2025-09-10
-weight: 2
+title: "Nhật Ký Tuần 10"
+date: 2025-11-10
+weight: 10
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục Tiêu Tuần 10:
 
-### Mục tiêu tuần 10:
+- Phát triển các API backend cốt lõi với Spring Boot
+- Triển khai database models và repositories
+- Thiết lập xác thực JWT
+- Deploy backend lên EC2
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Các nhiệm vụ cần thực hiện trong tuần:
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Ngày | Nhiệm vụ | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+|------|----------|--------------|-----------------|-------------------|
+| 1-3 | - Thiết kế database schema (ERD) <br> - Tạo JPA entities và repositories <br> - Triển khai APIs xác thực người dùng <br>&emsp; + Đăng ký, Đăng nhập, Đăng xuất <br>&emsp; + Tạo JWT token | 2025/11/10 | 2025/11/12 | Tài liệu Spring Boot JPA |
+| 4-5 | - Phát triển APIs hiến máu <br>&emsp; + Tạo yêu cầu hiến máu <br>&emsp; + Tìm kiếm người hiến theo nhóm máu <br>&emsp; + Cập nhật trạng thái hiến máu <br> - Kiểm thử APIs với Postman | 2025/11/13 | 2025/11/14 | REST API best practices |
+| 6-7 | - Build file JAR với Maven <br> - Deploy backend lên EC2 <br>&emsp; + Upload JAR lên S3 <br>&emsp; + Cấu hình EC2 với Java <br>&emsp; + Chạy ứng dụng Spring Boot <br> - Kiểm thử APIs đã deploy | 2025/11/15 | 2025/11/16 | Tài liệu AWS EC2, S3 |
 
+### Thành Tựu Tuần 10:
 
-### Kết quả đạt được tuần 10:
+- **Phát Triển Backend:**
+  - Thiết kế database schema với 5 bảng chính: Users, BloodDonations, Donors, Hospitals, DonationHistory
+  - Tạo JPA entities với các mối quan hệ (OneToMany, ManyToOne)
+  - Triển khai Spring Data JPA repositories
+  - Xây dựng hệ thống xác thực với JWT tokens
+  - Phát triển RESTful APIs cho quản lý người dùng và hiến máu
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+- **Triển Khai API:**
+  - User APIs: Đăng ký, Đăng nhập, Lấy Profile, Cập nhật Profile
+  - Donation APIs: Tạo Yêu cầu, Tìm Người hiến, Cập nhật Trạng thái, Lấy Lịch sử
+  - Triển khai xử lý lỗi và validation đúng cách
+  - Kiểm thử tất cả endpoints với Postman
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+- **Deploy Backend:**
+  - Build file JAR sử dụng Maven: `mvn clean package`
+  - Upload JAR lên S3 bucket để lưu trữ artifact
+  - Cấu hình EC2 instance với Java 17
+  - Deploy ứng dụng Spring Boot trên EC2
+  - Cấu hình application.properties với kết nối RDS
+  - Xác minh APIs hoạt động trên EC2
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+### Các Thách Thức Gặp Phải:
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+- **JPA Relationships:** Vấn đề circular dependency → Sử dụng `@JsonIgnore` và DTOs
+- **JWT Implementation:** Xử lý token expiration → Triển khai cơ chế refresh token
+- **EC2 Deployment:** Port 8080 không truy cập được → Cấu hình Security Group inbound rules
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+### Bài Học Chính:
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+- Thành thạo phát triển REST API với Spring Boot
+- Hiểu về JPA entity relationships và lazy loading
+- Học quy trình deploy ứng dụng Java lên EC2
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+### Tài Liệu Tham Khảo:
 
-
-
+- [Spring Boot JPA](https://spring.io/guides/gs/accessing-data-jpa/)
+- [JWT Authentication](https://jwt.io/introduction)
+- [AWS EC2 Deployment](https://docs.aws.amazon.com/ec2/)
