@@ -101,7 +101,8 @@ fcj-workshop-template-main/
 │   │   ├── 5.5-deploy-frontend/
 │   │   ├── 5.6-testing/
 │   │   ├── 5.7-monitoring/
-│   │   └── 5.8-cleanup/
+│   │   ├── 5.8-cicd-pipeline/
+│   │   └── 5.9-cleanup/
 │   │
 │   ├── 6-Self-evaluation/        # 📊 Self-assessment
 │   │   ├── _index.md
