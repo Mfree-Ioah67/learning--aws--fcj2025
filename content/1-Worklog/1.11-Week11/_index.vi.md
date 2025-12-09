@@ -1,60 +1,67 @@
 ﻿---
-title: "Worklog Tuần 11"
-date: 2025-09-10
-weight: 2
+title: "Nhật Ký Tuần 11"
+date: 2025-11-17
+weight: 11
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục Tiêu Tuần 11:
 
-### Mục tiêu tuần 11:
+- Phát triển frontend với React và Vite
+- Triển khai các components giao diện người dùng
+- Tích hợp frontend với backend APIs
+- Deploy frontend lên S3 và CloudFront
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Các nhiệm vụ cần thực hiện trong tuần:
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Ngày | Nhiệm vụ | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+|------|----------|--------------|-----------------|-------------------|
+| 1-3 | - Thiết kế UI/UX mockups <br> - Tạo React components <br>&emsp; + Trang Login/Register <br>&emsp; + Dashboard <br>&emsp; + Form hiến máu <br>&emsp; + Tìm kiếm người hiến <br> - Triển khai routing với React Router | 2025/11/17 | 2025/11/19 | Tài liệu React, Material-UI |
+| 4-5 | - Tích hợp với backend APIs <br>&emsp; + Axios cho HTTP requests <br>&emsp; + Quản lý JWT token <br>&emsp; + Xử lý lỗi API <br> - Kiểm thử user flows end-to-end | 2025/11/20 | 2025/11/21 | Tài liệu Axios |
+| 6-7 | - Build production bundle <br> - Deploy lên S3 <br>&emsp; + Cấu hình S3 cho static hosting <br>&emsp; + Upload dist files <br> - Thiết lập CloudFront CDN <br> - Kiểm thử ứng dụng đã deploy | 2025/11/22 | 2025/11/23 | Tài liệu AWS S3, CloudFront |
 
+### Thành Tựu Tuần 11:
 
-### Kết quả đạt được tuần 11:
+- **Phát Triển Frontend:**
+  - Thiết kế UI sạch và responsive với Material-UI
+  - Tạo các React components có thể tái sử dụng
+  - Triển khai trang xác thực (Login, Register)
+  - Xây dựng dashboard với thống kê hiến máu
+  - Phát triển form yêu cầu hiến máu
+  - Tạo tìm kiếm người hiến với filters (nhóm máu, vị trí)
+  - Triển khai React Router cho navigation
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+- **Tích Hợp API:**
+  - Cấu hình Axios cho API calls
+  - Triển khai lưu trữ JWT token trong localStorage
+  - Tạo API service layer để tổ chức code sạch
+  - Thêm loading states và xử lý lỗi
+  - Kiểm thử user flows hoàn chỉnh: Đăng ký → Đăng nhập → Tạo Hiến máu → Tìm Người hiến
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+- **Deploy Frontend:**
+  - Build production bundle tối ưu với Vite: `npm run build`
+  - Cấu hình S3 bucket cho static website hosting
+  - Upload dist files lên S3 sử dụng AWS CLI
+  - Thiết lập CloudFront distribution cho CDN
+  - Cấu hình custom domain (tùy chọn)
+  - Xác minh ứng dụng hoạt động trên CloudFront URL
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+### Các Thách Thức Gặp Phải:
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+- **CORS Issues:** Backend chặn requests từ frontend → Cấu hình CORS trong Spring Boot
+- **State Management:** State phức tạp qua các components → Sử dụng React Context API
+- **CloudFront Caching:** Files cũ vẫn được serve → Tạo invalidation cho `/*`
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+### Bài Học Chính:
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+- Thành thạo React hooks (useState, useEffect, useContext)
+- Hiểu các patterns tích hợp frontend-backend
+- Học thiết lập S3 static hosting và CloudFront CDN
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+### Tài Liệu Tham Khảo:
 
-
-
+- [React Documentation](https://react.dev/)
+- [Vite Build Tool](https://vitejs.dev/)
+- [AWS S3 Static Hosting](https://docs.aws.amazon.com/s3/static-website/)
+- [CloudFront CDN](https://docs.aws.amazon.com/cloudfront/)
