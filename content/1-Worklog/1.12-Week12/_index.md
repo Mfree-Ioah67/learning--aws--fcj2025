@@ -1,58 +1,84 @@
 ﻿---
 title: "Week 12 Worklog"
-date: 2025-09-10
-weight: 2
+date: 2025-11-24
+weight: 12
 chapter: false
 pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 12 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+- Set up CI/CD pipeline with AWS CodePipeline
+- Implement monitoring and logging
+- Perform testing and bug fixes
+- Complete project documentation
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Day | Task | Start Date | Completion Date | Reference Material |
+|-----|------|------------|-----------------|-------------------|
+| 1-2 | - Set up CI/CD pipeline <br>&emsp; + Configure AWS CodePipeline <br>&emsp; + Connect to Git repository <br>&emsp; + Automate build and deploy <br> - Test automated deployment | 2025/11/24 | 2025/11/25 | AWS CodePipeline docs |
+| 3-4 | - Implement monitoring <br>&emsp; + CloudWatch logs for backend <br>&emsp; + CloudWatch metrics <br>&emsp; + Set up alarms <br> - Configure API Gateway logging | 2025/11/26 | 2025/11/27 | AWS CloudWatch docs |
+| 5-6 | - Comprehensive testing <br>&emsp; + Unit tests for backend <br>&emsp; + Integration tests <br>&emsp; + Frontend E2E tests <br> - Bug fixes and optimization | 2025/11/28 | 2025/11/29 | Testing best practices |
+| 7 | - Complete documentation <br>&emsp; + README files <br>&emsp; + API documentation <br>&emsp; + Deployment guide <br> - Project presentation preparation | 2025/11/30 | 2025/11/30 | Documentation standards |
 
 ### Week 12 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+- **CI/CD Pipeline:**
+  - Configured AWS CodePipeline for automated deployment
+  - Connected pipeline to Git repository
+  - Set up build stage with CodeBuild
+  - Automated backend deployment to EC2
+  - Automated frontend deployment to S3 with CloudFront invalidation
+  - Tested complete CI/CD flow: Git push → Build → Deploy
 
-* Successfully created and configured an AWS Free Tier account.
+- **Monitoring & Logging:**
+  - Configured CloudWatch Logs for Spring Boot application
+  - Set up CloudWatch metrics for EC2 and RDS
+  - Created CloudWatch alarms for high CPU and memory usage
+  - Enabled API Gateway access logs
+  - Implemented application-level logging with proper log levels
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+- **Testing & Quality:**
+  - Wrote unit tests for backend services (JUnit)
+  - Created integration tests for API endpoints
+  - Performed manual E2E testing for all user flows
+  - Fixed bugs discovered during testing
+  - Optimized database queries for better performance
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+- **Documentation:**
+  - Created comprehensive README with setup instructions
+  - Documented all API endpoints with request/response examples
+  - Wrote deployment guide for team members
+  - Prepared project presentation slides
+  - Documented architecture decisions and trade-offs
 
-* Used AWS CLI to perform basic operations such as:
+### Challenges Encountered:
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+- **CodePipeline Configuration:** Build failures → Fixed Maven dependencies and build script
+- **CloudWatch Logs:** Logs not appearing → Configured IAM role for EC2 CloudWatch access
+- **Performance Issues:** Slow API responses → Added database indexes and query optimization
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+### Key Learnings:
 
+- Mastered AWS CI/CD pipeline setup
+- Understood importance of monitoring and logging in production
+- Learned testing strategies for full-stack applications
+- Improved documentation and communication skills
+
+### Project Summary:
+
+Successfully completed Blood Donation Support System with:
+- **Frontend:** React + Vite deployed on S3/CloudFront
+- **Backend:** Spring Boot deployed on EC2
+- **Database:** MySQL on RDS
+- **CI/CD:** Automated pipeline with CodePipeline
+- **Monitoring:** CloudWatch logs and metrics
+- **Security:** JWT authentication, HTTPS, Security Groups
+
+### References:
+
+- [AWS CodePipeline](https://docs.aws.amazon.com/codepipeline/)
+- [CloudWatch Monitoring](https://docs.aws.amazon.com/cloudwatch/)
+- [JUnit Testing](https://junit.org/junit5/)
+- [API Documentation](https://swagger.io/)
