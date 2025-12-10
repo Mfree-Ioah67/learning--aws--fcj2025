@@ -1,9 +1,9 @@
 ---
 title: "Giám sát và Xử lý sự cố"
 date: 2025-12-08
-weight: 7
+weight: 8
 chapter: false
-pre: " <b> 5.7 </b> "
+pre: " <b> 5.8 </b> "
 ---
 
 ## Tổng quan

@@ -1,9 +1,9 @@
 ---
 title: "Deploy Infrastructure with CloudFormation"
 date: 2025-12-08
-weight: 3
+weight: 4
 chapter: false
-pre: " <b> 5.3 </b> "
+pre: " <b> 5.4 </b> "
 ---
 
 ## Overview

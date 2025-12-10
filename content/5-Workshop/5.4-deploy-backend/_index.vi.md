@@ -1,9 +1,9 @@
 ---
 title: "Triển khai Backend Application"
 date: 2025-12-08
-weight: 4
+weight: 5
 chapter: false
-pre: " <b> 5.4 </b> "
+pre: " <b> 5.5 </b> "
 ---
 
 ## Tổng quan

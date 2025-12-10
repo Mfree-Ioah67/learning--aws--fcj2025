@@ -1,9 +1,9 @@
 ---
 title: "Triển khai Frontend"
 date: 2025-12-08
-weight: 5
+weight: 6
 chapter: false
-pre: " <b> 5.5 </b> "
+pre: " <b> 5.6 </b> "
 ---
 
 ## Tổng quan

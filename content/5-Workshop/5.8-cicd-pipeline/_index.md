@@ -1,9 +1,9 @@
 ---
 title: "CI/CD Pipeline Setup"
 date: 2025-12-08
-weight: 8
+weight: 9
 chapter: false
-pre: " <b> 5.8. </b> "
+pre: " <b> 5.9 </b> "
 ---
 
 ## Overview
