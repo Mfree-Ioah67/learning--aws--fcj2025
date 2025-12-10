@@ -10,9 +10,20 @@ pre: " <b> 1. </b> "
 ⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
 {{% /notice %}}
 
-**On this page**, you will need to introduce your worklog. **How** did you complete it? How many weeks did you take to complete the program? **What** did you do in those weeks?
+## Program Overview
 
-Typically, and as a standard, a worklog is carried out over about 3 months (throughout the internship period) with weekly contents as follows:
+I completed the **AWS First Cloud Journey Program** over a **12-week period** from September to December 2025. This comprehensive program was structured in three distinct phases:
+
+### Phase 1: AWS Fundamentals (Weeks 1-7)
+The first seven weeks focused on building a solid foundation in AWS cloud services. I systematically learned core AWS services through hands-on labs, covering compute, storage, networking, databases, security, and analytics. Each week included practical exercises to reinforce theoretical knowledge.
+
+### Phase 2: Project Proposal (Week 8)
+Week 8 was dedicated to developing a comprehensive project proposal for the **Blood Donation Support System**. This involved designing AWS architecture, selecting appropriate services, estimating costs, and creating an implementation timeline.
+
+### Phase 3: Project Implementation (Weeks 9-12)
+The final four weeks involved building and deploying the complete application on AWS, including infrastructure setup, backend development with Spring Boot, frontend development with React+Vite, and implementing CI/CD automation.
+
+## Weekly Breakdown
 
 **Week 1:** [AWS Fundamentals and Account Setup](1.1-week1/)
 

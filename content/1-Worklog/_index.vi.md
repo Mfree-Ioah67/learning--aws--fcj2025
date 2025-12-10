@@ -10,9 +10,20 @@ pre: " <b> 1. </b> "
 ⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
 {{% /notice %}}
 
-**Trong trang này** bạn sẽ cần giới thiệu worklog của bạn **như thế nào**? Bạn hoàn thành chương trình trong vòng **bao nhiêu tuần**? Bạn **đã làm gì** trong các tuần đó?
+## Tổng Quan Chương Trình
 
-Thông thường và cũng là tiêu chuẩn, một worklog được thực hiện trong khoảng 3 tháng (trong suốt thời gian thực tập) với nội dung các tuần như sau:
+Tôi đã hoàn thành **Chương trình AWS First Cloud Journey** trong **12 tuần** từ tháng 9 đến tháng 12 năm 2025. Chương trình toàn diện này được cấu trúc thành ba giai đoạn riêng biệt:
+
+### Giai đoạn 1: Nền tảng AWS (Tuần 1-7)
+Bảy tuần đầu tập trung vào xây dựng nền tảng vững chắc về các dịch vụ AWS cloud. Tôi đã học có hệ thống các dịch vụ AWS cốt lõi thông qua các bài lab thực hành, bao gồm compute, storage, networking, databases, security và analytics. Mỗi tuần đều có các bài tập thực hành để củng cố kiến thức lý thuyết.
+
+### Giai đoạn 2: Đề xuất Dự án (Tuần 8)
+Tuần 8 được dành để phát triển đề xuất dự án toàn diện cho **Hệ Thống Hỗ Trợ Hiến Máu**. Điều này bao gồm thiết kế kiến trúc AWS, lựa chọn các dịch vụ phù hợp, ước tính chi phí và tạo timeline triển khai.
+
+### Giai đoạn 3: Triển khai Dự án (Tuần 9-12)
+Bốn tuần cuối liên quan đến việc xây dựng và deploy ứng dụng hoàn chỉnh trên AWS, bao gồm thiết lập hạ tầng, phát triển backend với Spring Boot, phát triển frontend với React+Vite, và triển khai tự động hóa CI/CD.
+
+## Phân Chia Theo Tuần
 
 **Tuần 1:** [Kiến Thức Cơ Bản AWS và Thiết Lập Tài Khoản](1.1-week1/)
 
